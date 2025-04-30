@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " @ ",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:diamond_drop",
+    "count": 9
+  }
+}

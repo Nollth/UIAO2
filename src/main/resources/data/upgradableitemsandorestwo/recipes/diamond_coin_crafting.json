@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#@#",
+    "@$@",
+    "#@#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_block"
+    },
+    "@": {
+      "item": "minecraft:diamond"
+    },
+    "$": {
+      "item": "upgradableitemsandorestwo:diamond_drop"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:diamond_coin"
+  }
+}
