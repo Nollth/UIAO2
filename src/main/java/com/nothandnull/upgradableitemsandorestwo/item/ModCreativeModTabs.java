@@ -198,6 +198,9 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.uiaotwo_coins"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.IRON_COIN.get());
+                        output.accept(ModItems.GOLD_COIN.get());
+                        output.accept(ModItems.DIAMOND_COIN.get());
+                        output.accept(ModItems.NETHERITE_COIN.get());
                     })
                     .build());
 

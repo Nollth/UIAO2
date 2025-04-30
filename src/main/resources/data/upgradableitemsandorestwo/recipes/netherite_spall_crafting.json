@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " @ ",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:netherite_spall",
+    "count": 9
+  }
+}

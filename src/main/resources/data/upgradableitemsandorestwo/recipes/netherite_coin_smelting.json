@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1,
+  "group": "netherite_coin",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:netherite_coin"
+  },
+  "result": "upgradableitemsandorestwo:netherite_spall"
+}

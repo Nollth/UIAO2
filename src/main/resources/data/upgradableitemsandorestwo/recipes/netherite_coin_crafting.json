@@ -8,17 +8,17 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:diamond_block"
+      "item": "minecraft:netherite_block"
     },
     "@": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:netherite_ingot"
     },
     "$": {
-      "item": "upgradableitemsandorestwo:diamond_drop"
+      "item": "upgradableitemsandorestwo:netherite_spall"
     }
   },
   "result": {
-    "item": "upgradableitemsandorestwo:diamond_coin",
+    "item": "upgradableitemsandorestwo:netherite_coin",
     "count": 3
   }
 }
