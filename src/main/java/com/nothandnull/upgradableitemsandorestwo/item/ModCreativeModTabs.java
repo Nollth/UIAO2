@@ -193,6 +193,15 @@ public class ModCreativeModTabs {
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> UIAOTWO_COINS =
+            CREATIVE_MODE_TABS.register("uiaotwo_coins", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.IRON_COIN.get()))
+                    .title(Component.translatable("creativetab.uiaotwo_coins"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.IRON_COIN.get());
+                    })
+                    .build());
+
+
     public static final RegistryObject<CreativeModeTab> UIAOTWO_ARMORS =
             CREATIVE_MODE_TABS.register("uiaotwo_armors", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.KITTY_BOOTS.get()))
                     .title(Component.translatable("creativetab.uiaotwo_armors"))

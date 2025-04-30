@@ -24,6 +24,9 @@ public class ModItems {
     public static final RegistryObject<Item> TEST_FUEL = ITEMS.register("test_fuel",
             () -> new FuelItem(new Item.Properties(),1024000));
 
+    public static final RegistryObject<Item> IRON_COIN = ITEMS.register("iron_coin",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> BURNING_HOPE = ITEMS.register("burning_hope",
             () -> new Item(new Item.Properties()));
 
