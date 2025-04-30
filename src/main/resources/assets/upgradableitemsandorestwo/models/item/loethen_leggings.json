@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "upgradableitemsandorestwo:item/loethen_leggings",
+    "layer1": "upgradableitemsandorestwo:item/loethen_leggings_overlay"
+  }
+}

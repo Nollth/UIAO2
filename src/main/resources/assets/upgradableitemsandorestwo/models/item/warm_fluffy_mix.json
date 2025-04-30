@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "upgradableitemsandorestwo:item/warm_fluffy_mix"
+  }
+}

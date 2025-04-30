@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "upgradableitemsandorestwo:test_block_two"
+    }
+  ],
+  "result": {
+    "item": "upgradableitemsandorestwo:test_item_two",
+    "count": 9
+  }
+}

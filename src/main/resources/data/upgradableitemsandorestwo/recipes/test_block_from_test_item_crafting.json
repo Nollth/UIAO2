@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "upgradableitemsandorestwo:test_item"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:test_block"
+  }
+}

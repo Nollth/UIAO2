@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "upgradableitemsandorestwo:item/leatherite_chestplate",
+    "layer1": "upgradableitemsandorestwo:item/leatherite_chestplate_overlay"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "upgradableitemsandorestwo:item/loethen_boots",
+    "layer1": "upgradableitemsandorestwo:item/loethen_boots_overlay"
+  }
+}

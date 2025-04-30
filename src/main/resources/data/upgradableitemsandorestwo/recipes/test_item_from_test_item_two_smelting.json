@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 1,
+  "experience": 768000,
+  "group": "test_item",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:test_item_two"
+  },
+  "result": "upgradableitemsandorestwo:test_item"
+}

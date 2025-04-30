@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "upgradableitemsandorestwo:item/litheron_boots",
+    "layer1": "upgradableitemsandorestwo:item/litheron_boots_overlay"
+  }
+}
