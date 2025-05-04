@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "$@$",
+    "@#@",
+    "$@$"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:reinforced_iron_block"
+    },
+    "@": {
+      "item": "minecraft:reinforced_iron_ingot"
+    },
+    "$": {
+      "item": "minecraft:reinforced_iron_nugget"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_iron_coin",
+    "count": 3
+  }
+}

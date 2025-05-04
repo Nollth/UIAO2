@@ -27,6 +27,26 @@ public class ModEvents {
                     9, 10, 0.05F));
 
             trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
+                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 1),
+                    9, 10, 0.05F));
+
+            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
+                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 1),
+                    9, 10, 0.05F));
+
+            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
+                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 1),
+                    9, 10, 0.05F));
+
+            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
+                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 1),
+                    9, 10, 0.05F));
+
+            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(ModItems.GOLD_COIN.get(), 9),
                     new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 1),
                     9, 10, 0.05F));
@@ -40,7 +60,6 @@ public class ModEvents {
                     new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
                     new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 1),
                     9, 10, 0.05F));
-            
         }
     }
 }

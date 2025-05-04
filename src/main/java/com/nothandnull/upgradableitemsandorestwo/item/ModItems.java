@@ -2,11 +2,19 @@ package com.nothandnull.upgradableitemsandorestwo.item;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
 import com.nothandnull.upgradableitemsandorestwo.item.custom.FuelItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -27,23 +35,80 @@ public class ModItems {
     public static final RegistryObject<Item> IRON_COIN = ITEMS.register("iron_coin",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> REINFORCED_IRON_COIN = ITEMS.register("reinforced_iron_coin",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> DIAMOND_COIN = ITEMS.register("diamond_coin",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> REINFORCED_DIAMOND_COIN = ITEMS.register("reinforced_diamond_coin",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GOLD_COIN = ITEMS.register("gold_coin",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> REINFORCED_GOLD_COIN = ITEMS.register("reinforced_gold_coin",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> NETHERITE_COIN = ITEMS.register("netherite_coin",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> BURNING_HOPE = ITEMS.register("burning_hope",
+    public static final RegistryObject<Item> REINFORCED_NETHERITE_COIN = ITEMS.register("reinforced_netherite_coin",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BURNING_SOULS = ITEMS.register("burning_souls",
-            () -> new Item(new Item.Properties()));
+            () -> new FuelItem(new Item.Properties(),144000){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.translatable("tooltip.upgradableitemsandorestwo.burning_souls.tooltip"));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
+
+    public static final RegistryObject<Item> TORMENTED_SOULS =  ITEMS.register("tormented_souls",
+            () -> new FuelItem(new Item.Properties(),1296000){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.translatable("tooltip.upgradableitemsandorestwo.tormented_souls.tooltip"));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
+
+    public static final RegistryObject<Item> WHISPER_DESPAIR =  ITEMS.register("whisper_despair",
+            () -> new FuelItem(new Item.Properties(),11664000){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.translatable("tooltip.upgradableitemsandorestwo.whisper_despair.tooltip"));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
+
+    public static final RegistryObject<Item> SOUL_FLAMES =  ITEMS.register("soul_flames",
+            () -> new FuelItem(new Item.Properties(),104976000){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.translatable("tooltip.upgradableitemsandorestwo.soul_flames.tooltip"));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
+
+    public static final RegistryObject<Item> BURNING_HOPE = ITEMS.register("burning_hope",
+            () -> new FuelItem(new Item.Properties(),944784000){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.translatable("tooltip.upgradableitemsandorestwo.burning_hope.tooltip"));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
 
     public static final RegistryObject<Item> CHAINED_SOULS = ITEMS.register("chained_souls",
-            () -> new Item(new Item.Properties()));
+            () -> new FuelItem(new Item.Properties(),1999999999){
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    pTooltipComponents.add(Component.translatable("tooltip.upgradableitemsandorestwo.chained_souls.tooltip"));
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
 
     public static final RegistryObject<Item> CHAINETHARILE = ITEMS.register("chainetharile",
             () -> new Item(new Item.Properties()));
@@ -433,9 +498,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> LEATHERITE_HELMET =  ITEMS.register("leatherite_helmet",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> LEATHERITE_HORSE_ARMOR =  ITEMS.register("leatherite_horse_armor",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> LEATHERITE_LEGGINGS =  ITEMS.register("leatherite_leggings",
@@ -855,9 +917,6 @@ public class ModItems {
     public static final RegistryObject<Item> REINFORCED_NETHERITE_SWORD =  ITEMS.register("reinforced_netherite_sword",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> SOUL_FLAMES =  ITEMS.register("soul_flames",
-            () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> SWEET_AXE =  ITEMS.register("sweet_axe",
             () -> new Item(new Item.Properties()));
 
@@ -891,9 +950,6 @@ public class ModItems {
     public static final RegistryObject<Item> SWEET_WATER_BUCKET =  ITEMS.register("sweet_water_bucket",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> TORMENTED_SOULS =  ITEMS.register("tormented_souls",
-            () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> WARM_FLUFFY_MIX =  ITEMS.register("warm_fluffy_mix",
             () -> new Item(new Item.Properties()));
 
@@ -904,9 +960,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> WEIRD_LOVED_MIX =  ITEMS.register("weird_loved_mix",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> WHISPER_DESPAIR =  ITEMS.register("whisper_despair",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@@@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:tormented_souls"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:whisper_despair",
+    "count": 3
+  }
+}

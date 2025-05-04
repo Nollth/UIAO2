@@ -160,23 +160,6 @@ public class ModCreativeModTabs {
                     })
                     .build());
 
-    public static final RegistryObject<CreativeModeTab> UIAOTWO_COLDS =
-            CREATIVE_MODE_TABS.register("uiaotwo_colds", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COLD_WATER_BUCKET.get()))
-                    .title(Component.translatable("creativetab.uiaotwo_colds"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.COLD_WATER_BUCKET.get());
-                        output.accept(ModItems.COLD_WET_SWEET_SLIMY.get());
-                    })
-                    .build());
-
-    public static final RegistryObject<CreativeModeTab> UIAOTWO_HOTS =
-            CREATIVE_MODE_TABS.register("uiaotwo_hots", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.WARM_WATER_BUCKET.get()))
-                    .title(Component.translatable("creativetab.uiaotwo_hots"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.WARM_WATER_BUCKET.get());
-                    })
-                    .build());
-
     public static final RegistryObject<CreativeModeTab> UIAOTWO_FUELS =
             CREATIVE_MODE_TABS.register("uiaotwo_fuels", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DEATH_STAR.get()))
                     .title(Component.translatable("creativetab.uiaotwo_fuels"))
@@ -201,6 +184,10 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.GOLD_COIN.get());
                         output.accept(ModItems.DIAMOND_COIN.get());
                         output.accept(ModItems.NETHERITE_COIN.get());
+                        output.accept(ModItems.REINFORCED_IRON_COIN.get());
+                        output.accept(ModItems.REINFORCED_GOLD_COIN.get());
+                        output.accept(ModItems.REINFORCED_DIAMOND_COIN.get());
+                        output.accept(ModItems.REINFORCED_NETHERITE_COIN.get());
                     })
                     .build());
 
@@ -311,7 +298,6 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.LEATHERITE_LEGGINGS.get());
                         output.accept(ModItems.LEATHERITE_CHESTPLATE.get());
                         output.accept(ModItems.LEATHERITE_HELMET.get());
-                        output.accept(ModItems.LEATHERITE_HORSE_ARMOR.get());
                         output.accept(ModItems.LITHERON_BOOTS.get());
                         output.accept(ModItems.LITHERON_LEGGINGS.get());
                         output.accept(ModItems.LITHERON_CHESTPLATE.get());
@@ -342,6 +328,9 @@ public class ModCreativeModTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.TEST_ITEM.get());
                         output.accept(ModItems.TEST_ITEM_TWO.get());
+                        output.accept(ModItems.WARM_WATER_BUCKET.get());
+                        output.accept(ModItems.COLD_WATER_BUCKET.get());
+                        output.accept(ModItems.COLD_WET_SWEET_SLIMY.get());
                         output.accept(ModItems.GRISTLES.get());
                         output.accept(ModItems.LOVED_DUST.get());
                         output.accept(ModItems.SWEET_SLIMY.get());

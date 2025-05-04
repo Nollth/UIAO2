@@ -3,16 +3,50 @@
   "item.upgradableitemsandorestwo.test_item_two": "Test Item Two :3",
 
   "item.upgradableitemsandorestwo.test_food": "Test Food :3",
+  "item.upgradableitemsandorestwo.reinforced_golden_carrot": "Reinforced Golden Carrot",
+  "item.upgradableitemsandorestwo.reinforced_golden_apple": "Reinforced Golden Apple",
+  "item.upgradableitemsandorestwo.heavy_golden_carrot": "Heavy Golden Carrot",
+  "item.upgradableitemsandorestwo.heavy_golden_apple": "Heavy Golden Apple",
+
 
   "item.upgradableitemsandorestwo.test_fuel": "Test Fuel :3",
 
   "item.upgradableitemsandorestwo.iron_coin": "Iron Coin",
+  "item.upgradableitemsandorestwo.reinforced_iron_coin": "Reinforced Iron Coin",
   "item.upgradableitemsandorestwo.gold_coin": "Gold Coin",
+  "item.upgradableitemsandorestwo.reinforced_gold_coin": "Reinforced Gold Coin",
   "item.upgradableitemsandorestwo.diamond_coin": "Diamond Coin",
+  "item.upgradableitemsandorestwo.reinforced_diamond_coin": "Reinforced Diamond Coin",
   "item.upgradableitemsandorestwo.netherite_coin": "Netherite Coin",
+  "item.upgradableitemsandorestwo.reinforced_netherite_coin": "Reinforced Netherite Coin",
 
   "block.upgradableitemsandorestwo.test_block": "Test Block :3",
   "block.upgradableitemsandorestwo.test_block_two": "Test Block Two :3",
+
+  "tooltip.upgradableitemsandorestwo.burning_souls.tooltip": "Cookingtime: 144.000",
+  "tooltip.upgradableitemsandorestwo.tormented_souls.tooltip": "Cookingtime: 1.296.000",
+  "tooltip.upgradableitemsandorestwo.whisper_despair.tooltip": "Cookingtime: 11.664.000",
+  "tooltip.upgradableitemsandorestwo.soul_flames.tooltip": "Cookingtime: 104.976.000",
+  "tooltip.upgradableitemsandorestwo.burning_hope.tooltip": "Cookingtime: 944.784.000",
+  "tooltip.upgradableitemsandorestwo.chained_souls.tooltip": "Cookingtime: 1.999.999.999 (Max.)",
+
+
+  "item.upgradableitemsandorestwo.reinforced_diamond_horse_armor": "Reinforced Diamond Horse Armor",
+  "item.upgradableitemsandorestwo.reinforced_golden_horse_armor": "Reinforced Golden Horse Armor",
+  "item.upgradableitemsandorestwo.reinforced_iron_horse_armor": "Reinforced Iron Horse Armor",
+  "item.upgradableitemsandorestwo.oxidized_reinforced_copper_horse_armor": "Oxidized Reinforced Copper Horse Armor",
+  "item.upgradableitemsandorestwo.heavy_diamond_horse_armor": "Heavy Diamond Horse Armor",
+  "item.upgradableitemsandorestwo.heavy_golden_horse_armor": "Heavy Golden Horse Armor",
+  "item.upgradableitemsandorestwo.heavy_iron_horse_armor": "Heavy Iron Horse Armor",
+  "item.upgradableitemsandorestwo.oxidized_heavy_copper_horse_armor": "Oxidized Heavy Copper Horse Armor",
+  "item.upgradableitemsandorestwo.oxidized_copper_horse_armor": "Oxidized Copper Horse Armor",
+  "item.upgradableitemsandorestwo.goaldmond_horse_armor": "Goaldmond Horse Armor",
+  "item.upgradableitemsandorestwo.golreon_horse_armor": "Golreon Horse Armor",
+  "item.upgradableitemsandorestwo.diamron_horse_armor": "Diamron Horse Armor",
+  "item.upgradableitemsandorestwo.liathrond_horse_armor": "Liathrond Horse Armor",
+  "item.upgradableitemsandorestwo.loethen_horse_armor": "Loethen Horse Armor",
+  "item.upgradableitemsandorestwo.litheron_horse_armor": "Litheron Horse Armor",
+
 
   "item.upgradableitemsandorestwo.chainmolden": "Chainmolden",
   "item.upgradableitemsandorestwo.chainmolden_helmet": "Chainmolden Helmet",
@@ -333,6 +367,7 @@
   "creativetab.uiaotwo_tools": "UIaO 2 - Tools Tab",
   "creativetab.uiaotwo_armors": "UIaO 2 - Armors Tab",
   "creativetab.uiaotwo_ores": "UIaO 2 - Ores Tab",
+  "creativetab.uiaotwo_coins": "UIaO 2 - Coins Tab",
   "creativetab.uiaotwo_blocks": "UIaO 2 - Blocks Tab",
   "creativetab.uiaotwo_items": "UIaO 2 - Items Tab",
   "creativetab.uiaotwo_foods": "UIaO 2 - Foods Tab",
