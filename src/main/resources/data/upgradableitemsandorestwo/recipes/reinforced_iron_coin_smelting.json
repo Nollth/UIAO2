@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 2,
+  "group": "reinforced_iron_coin",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:reinforced_iron_coin"
+  },
+  "result": "upgradableitemsandorestwo:reinforced_iron_nugget"
+}

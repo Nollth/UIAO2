@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@@@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:heavy_diamond_drop"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_diamond"
+  }
+}

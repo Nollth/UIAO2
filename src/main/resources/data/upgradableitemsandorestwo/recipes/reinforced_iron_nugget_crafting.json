@@ -8,7 +8,7 @@
   ],
   "key": {
     "@": {
-      "item": "minecraft:reinforced_iron_ingot"
+      "item": "upgradableitemsandorestwo:reinforced_iron_ingot"
     },
     "result": {
       "item": "upgradableitemsandorestwo:reinforced_iron_nugget",

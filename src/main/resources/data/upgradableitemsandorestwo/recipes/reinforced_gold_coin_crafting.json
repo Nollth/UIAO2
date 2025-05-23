@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "$@$",
+    "@#@",
+    "$@$"
+  ],
+  "key": {
+    "#": {
+      "item": "upgradableitemsandorestwo:reinforced_gold_block"
+    },
+    "@": {
+      "item": "upgradableitemsandorestwo:reinforced_gold_ingot"
+    },
+    "$": {
+      "item": "upgradableitemsandorestwo:reinforced_gold_nugget"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_gold_coin",
+    "count": 3
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "$@$",
+    "@#@",
+    "$@$"
+  ],
+  "key": {
+    "#": {
+      "item": "upgradableitemsandorestwo:reinforced_netherite_block"
+    },
+    "@": {
+      "item": "upgradableitemsandorestwo:reinforced_netherite_ingot"
+    },
+    "$": {
+      "item": "upgradableitemsandorestwo:reinforced_netherite_spall"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_netherite_coin",
+    "count": 3
+  }
+}

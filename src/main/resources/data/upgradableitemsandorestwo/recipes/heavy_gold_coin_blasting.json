@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 4,
+  "group": "heavy_gold_coin",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_gold_coin"
+  },
+  "result": "upgradableitemsandorestwo:heavy_gold_nugget"
+}

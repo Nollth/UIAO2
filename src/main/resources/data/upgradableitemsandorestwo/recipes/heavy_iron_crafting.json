@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@@@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:heavy_iron_nugget"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_iron_ingot"
+  }
+}

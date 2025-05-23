@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "$@$",
+    "@#@",
+    "$@$"
+  ],
+  "key": {
+    "#": {
+      "item": "upgradableitemsandorestwo:reinforced_diamond_block"
+    },
+    "@": {
+      "item": "upgradableitemsandorestwo:reinforced_diamond"
+    },
+    "$": {
+      "item": "upgradableitemsandorestwo:reinforced_diamond_drop"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond_coin",
+    "count": 3
+  }
+}

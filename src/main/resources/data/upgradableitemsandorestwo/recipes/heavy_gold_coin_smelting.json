@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 4,
+  "group": "heavy_gold_coin",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_gold_coin"
+  },
+  "result": "upgradableitemsandorestwo:heavy_gold_nugget"
+
+}

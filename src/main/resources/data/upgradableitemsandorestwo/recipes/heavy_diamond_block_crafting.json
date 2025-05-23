@@ -8,10 +8,10 @@
   ],
   "key": {
     "@": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_ingot"
+      "item": "upgradableitemsandorestwo:heavy_diamond"
     },
     "result": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_block"
+      "item": "upgradableitemsandorestwo:heavy_diamond_block"
     }
   }
 }

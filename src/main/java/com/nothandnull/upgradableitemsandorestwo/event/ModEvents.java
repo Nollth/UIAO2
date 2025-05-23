@@ -3,11 +3,16 @@ package com.nothandnull.upgradableitemsandorestwo.event;
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -15,6 +20,31 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = UpgradableItemsAndOresTwo.MOD_ID)
 public class ModEvents {
+
+    @SubscribeEvent
+    public static void onEntitySpawn(EntityJoinLevelEvent event) {
+        if (event.getEntity() instanceof Mob mob) {
+            mob.targetSelector.getAvailableGoals().removeIf(goal ->
+                    goal.getGoal() instanceof NearestAttackableTargetGoal);
+
+            mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Player.class, true,
+                    ModEvents::shouldAttackPlayer));
+        }
+    }
+
+    private static boolean shouldAttackPlayer(LivingEntity target) {
+        if (!(target instanceof Player player)) {
+            return false;
+        }
+
+        for (ItemStack armorPiece : player.getArmorSlots()) {
+            if (!armorPiece.isEmpty()) {
+                return true;
+            }
+        }
+
+        return !player.getMainHandItem().isEmpty() || !player.getOffhandItem().isEmpty();
+    }
 
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
