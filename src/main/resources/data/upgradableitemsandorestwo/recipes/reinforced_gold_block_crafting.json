@@ -9,9 +9,9 @@
   "key": {
     "@": {
       "item": "upgradableitemsandorestwo:reinforced_gold_ingot"
-    },
+    }
+  },
     "result": {
       "item": "upgradableitemsandorestwo:reinforced_gold_block"
     }
   }
-}

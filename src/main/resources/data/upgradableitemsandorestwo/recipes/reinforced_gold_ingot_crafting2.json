@@ -8,11 +8,11 @@
   ],
   "key": {
     "@": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_block"
+      "item": "upgradableitemsandorestwo:reinforced_gold_block"
     }
   },
     "result": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_ingot",
+      "item": "upgradableitemsandorestwo:reinforced_gold_ingot",
       "count": 9
     }
   }

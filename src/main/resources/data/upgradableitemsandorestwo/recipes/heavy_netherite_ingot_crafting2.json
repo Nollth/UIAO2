@@ -8,11 +8,11 @@
   ],
   "key": {
     "@": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_block"
+      "item": "upgradableitemsandorestwo:heavy_netherite_block"
     }
   },
     "result": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_ingot",
+      "item": "upgradableitemsandorestwo:heavy_netherite_ingot",
       "count": 9
     }
   }

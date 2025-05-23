@@ -9,9 +9,9 @@
   "key": {
     "@": {
       "item": "upgradableitemsandorestwo:heavy_diamond"
-    },
+    }
+  },
     "result": {
       "item": "upgradableitemsandorestwo:heavy_diamond_block"
     }
   }
-}

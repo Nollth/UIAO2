@@ -188,6 +188,10 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.REINFORCED_GOLD_COIN.get());
                         output.accept(ModItems.REINFORCED_DIAMOND_COIN.get());
                         output.accept(ModItems.REINFORCED_NETHERITE_COIN.get());
+                        output.accept(ModItems.HEAVY_IRON_COIN.get());
+                        output.accept(ModItems.HEAVY_GOLD_COIN.get());
+                        output.accept(ModItems.HEAVY_DIAMOND_COIN.get());
+                        output.accept(ModItems.HEAVY_NETHERITE_COIN.get());
                     })
                     .build());
 

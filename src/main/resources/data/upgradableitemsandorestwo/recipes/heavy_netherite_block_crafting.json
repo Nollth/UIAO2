@@ -9,9 +9,9 @@
   "key": {
     "@": {
       "item": "upgradableitemsandorestwo:heavy_netherite_ingot"
-    },
+    }
+  },
     "result": {
       "item": "upgradableitemsandorestwo:heavy_netherite_block"
     }
   }
-}

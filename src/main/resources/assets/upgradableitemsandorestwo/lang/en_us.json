@@ -13,12 +13,16 @@
 
   "item.upgradableitemsandorestwo.iron_coin": "Iron Coin",
   "item.upgradableitemsandorestwo.reinforced_iron_coin": "Reinforced Iron Coin",
+  "item.upgradableitemsandorestwo.heavy_iron_coin": "Heavy Iron Coin",
   "item.upgradableitemsandorestwo.gold_coin": "Gold Coin",
   "item.upgradableitemsandorestwo.reinforced_gold_coin": "Reinforced Gold Coin",
+  "item.upgradableitemsandorestwo.heavy_gold_coin": "Heavy Gold Coin",
   "item.upgradableitemsandorestwo.diamond_coin": "Diamond Coin",
   "item.upgradableitemsandorestwo.reinforced_diamond_coin": "Reinforced Diamond Coin",
+  "item.upgradableitemsandorestwo.heavy_diamond_coin": "Heavy Diamond Coin",
   "item.upgradableitemsandorestwo.netherite_coin": "Netherite Coin",
   "item.upgradableitemsandorestwo.reinforced_netherite_coin": "Reinforced Netherite Coin",
+  "item.upgradableitemsandorestwo.heavy_netherite_coin": "Heavy Netherite Coin",
 
   "block.upgradableitemsandorestwo.test_block": "Test Block :3",
   "block.upgradableitemsandorestwo.test_block_two": "Test Block Two :3",

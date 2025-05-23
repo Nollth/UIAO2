@@ -38,10 +38,16 @@ public class ModItems {
     public static final RegistryObject<Item> REINFORCED_IRON_COIN = ITEMS.register("reinforced_iron_coin",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> HEAVY_IRON_COIN = ITEMS.register("heavy_iron_coin",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> DIAMOND_COIN = ITEMS.register("diamond_coin",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_COIN = ITEMS.register("reinforced_diamond_coin",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> HEAVY_DIAMOND_COIN = ITEMS.register("heavy_diamond_coin",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GOLD_COIN = ITEMS.register("gold_coin",
@@ -50,10 +56,16 @@ public class ModItems {
     public static final RegistryObject<Item> REINFORCED_GOLD_COIN = ITEMS.register("reinforced_gold_coin",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> HEAVY_GOLD_COIN = ITEMS.register("heavy_gold_coin",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> NETHERITE_COIN = ITEMS.register("netherite_coin",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_COIN = ITEMS.register("reinforced_netherite_coin",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> HEAVY_NETHERITE_COIN = ITEMS.register("heavy_netherite_coin",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BURNING_SOULS = ITEMS.register("burning_souls",

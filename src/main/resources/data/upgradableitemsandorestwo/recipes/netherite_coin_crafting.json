@@ -8,17 +8,17 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:netherite_block"
+      "item": "upgradableitemsandorestwo:heavy_netherite_block"
     },
     "@": {
-      "item": "minecraft:netherite_ingot"
+      "item": "upgradableitemsandorestwo:heavy_netherite_ingot"
     },
     "$": {
-      "item": "upgradableitemsandorestwo:netherite_spall"
+      "item": "upgradableitemsandorestwo:heavy_netherite_spall"
     }
   },
   "result": {
-    "item": "upgradableitemsandorestwo:netherite_coin",
+    "item": "upgradableitemsandorestwo:heavy_netherite_coin",
     "count": 3
   }
 }
