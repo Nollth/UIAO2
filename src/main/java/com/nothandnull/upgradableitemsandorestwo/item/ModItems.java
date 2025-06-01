@@ -4,9 +4,7 @@ import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
 import com.nothandnull.upgradableitemsandorestwo.item.custom.FuelItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -861,7 +859,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_AXE =  ITEMS.register("reinforced_iron_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_BOOTS =  ITEMS.register("reinforced_iron_boots",
             () -> new Item(new Item.Properties()));
@@ -873,7 +871,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_HOE =  ITEMS.register("reinforced_iron_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_HORSE_ARMOR =  ITEMS.register("reinforced_iron_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -888,13 +886,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_PICKAXE =  ITEMS.register("reinforced_iron_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_SHOVEL =  ITEMS.register("reinforced_iron_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_SWORD =  ITEMS.register("reinforced_iron_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_AXE =  ITEMS.register("reinforced_netherite_axe",
             () -> new Item(new Item.Properties()));
