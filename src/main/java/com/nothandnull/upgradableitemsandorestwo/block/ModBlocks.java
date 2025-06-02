@@ -70,7 +70,7 @@ public class    ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
 
     public static final RegistryObject<Block> REINFORCED_IRON_BLOCK = registerBlock("reinforced_iron_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(5f, 6f)));
 
     public static final RegistryObject<Block> REINFORCED_NETHERITE_BLOCK = registerBlock("reinforced_netherite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
