@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@ ",
+    "@# ",
+    " # "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:reinforced_netherite_ingot"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_netherite_axe"
+  }
+}

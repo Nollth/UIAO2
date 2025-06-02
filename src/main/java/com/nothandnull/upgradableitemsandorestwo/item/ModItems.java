@@ -2,7 +2,6 @@ package com.nothandnull.upgradableitemsandorestwo.item;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
 import com.nothandnull.upgradableitemsandorestwo.item.custom.FuelItem;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -319,7 +318,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_AXE = ITEMS.register("heavy_diamond_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.HEAVY_DIAMOND, 23, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_BOOTS = ITEMS.register("heavy_diamond_boots",
             () -> new Item(new Item.Properties()));
@@ -334,7 +333,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_HOE = ITEMS.register("heavy_diamond_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.HEAVY_DIAMOND, -9, 12.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_HORSE_ARMOR = ITEMS.register("heavy_diamond_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -343,13 +342,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_PICKAXE = ITEMS.register("heavy_diamond_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.HEAVY_DIAMOND, 7, 0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_SHOVEL = ITEMS.register("heavy_diamond_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.HEAVY_DIAMOND, 9, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_SWORD = ITEMS.register("heavy_diamond_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.HEAVY_DIAMOND, 15, 2.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLD_INGOT = ITEMS.register("heavy_gold_ingot",
             () -> new Item(new Item.Properties()));
@@ -361,7 +360,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_AXE = ITEMS.register("heavy_golden_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.HEAVY_GOLD, 27, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_BOOTS = ITEMS.register("heavy_golden_boots",
             () -> new Item(new Item.Properties()));
@@ -376,7 +375,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_HOE =  ITEMS.register("heavy_golden_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.HEAVY_GOLD, 3, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_HORSE_ARMOR =  ITEMS.register("heavy_golden_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -385,16 +384,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_PICKAXE =  ITEMS.register("heavy_golden_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.HEAVY_GOLD, 7, 0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_SHOVEL =  ITEMS.register("heavy_golden_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.HEAVY_GOLD, 9, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_SWORD =  ITEMS.register("heavy_golden_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.HEAVY_GOLD, 15, 2.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_AXE =  ITEMS.register("heavy_iron_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.HEAVY_IRON, 27, -0.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_BOOTS =  ITEMS.register("heavy_iron_boots",
             () -> new Item(new Item.Properties()));
@@ -406,7 +405,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_HOE =  ITEMS.register("heavy_iron_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.HEAVY_IRON, -5, 8.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_HORSE_ARMOR =  ITEMS.register("heavy_iron_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -421,16 +420,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_PICKAXE =  ITEMS.register("heavy_iron_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.HEAVY_IRON, 7, 0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_SHOVEL =  ITEMS.register("heavy_iron_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.HEAVY_IRON, 9, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_SWORD =  ITEMS.register("heavy_iron_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.HEAVY_IRON, 15, 2.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_AXE =  ITEMS.register("heavy_netherite_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.HEAVY_NETHERITE, 23, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_BOOTS =  ITEMS.register("heavy_netherite_boots",
             () -> new Item(new Item.Properties()));
@@ -442,7 +441,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_HOE =  ITEMS.register("heavy_netherite_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.HEAVY_NETHERITE, -13, 12.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_INGOT =  ITEMS.register("heavy_netherite_ingot",
             () -> new Item(new Item.Properties()));
@@ -451,16 +450,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_PICKAXE =  ITEMS.register("heavy_netherite_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.HEAVY_NETHERITE, 7, 0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_SHOVEL =  ITEMS.register("heavy_netherite_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.HEAVY_NETHERITE, 9, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_SPALL =  ITEMS.register("heavy_netherite_spall",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_SWORD =  ITEMS.register("heavy_netherite_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.HEAVY_NETHERITE, 15, 2.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> KITTY_AXE =  ITEMS.register("kitty_axe",
             () -> new Item(new Item.Properties()));
@@ -784,7 +783,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_AXE =  ITEMS.register("reinforced_diamond_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.REINFORCED_DIAMOND, 11, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_BOOTS =  ITEMS.register("reinforced_diamond_boots",
             () -> new Item(new Item.Properties()));
@@ -799,7 +798,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_HOE =  ITEMS.register("reinforced_diamond_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.REINFORCED_DIAMOND, -5, 4, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_HORSE_ARMOR =  ITEMS.register("reinforced_diamond_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -808,13 +807,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_PICKAXE =  ITEMS.register("reinforced_diamond_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.REINFORCED_DIAMOND, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_SHOVEL =  ITEMS.register("reinforced_diamond_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.REINFORCED_DIAMOND, 4, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_SWORD =  ITEMS.register("reinforced_diamond_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.REINFORCED_DIAMOND, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLD_INGOT =  ITEMS.register("reinforced_gold_ingot",
             () -> new Item(new Item.Properties()));
@@ -826,7 +825,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_AXE =  ITEMS.register("reinforced_golden_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.REINFORCED_GOLD, 13, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_BOOTS =  ITEMS.register("reinforced_golden_boots",
             () -> new Item(new Item.Properties()));
@@ -841,7 +840,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_HOE =  ITEMS.register("reinforced_golden_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.REINFORCED_GOLD, 1, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_HORSE_ARMOR =  ITEMS.register("reinforced_golden_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -850,16 +849,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_PICKAXE =  ITEMS.register("reinforced_golden_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.REINFORCED_GOLD, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_SHOVEL =  ITEMS.register("reinforced_golden_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.REINFORCED_GOLD, 4, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_SWORD =  ITEMS.register("reinforced_golden_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.REINFORCED_GOLD, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_AXE =  ITEMS.register("reinforced_iron_axe",
-            () -> new AxeItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.REINFORCED_IRON, 13, -2.2F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_BOOTS =  ITEMS.register("reinforced_iron_boots",
             () -> new Item(new Item.Properties()));
@@ -871,7 +870,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_HOE =  ITEMS.register("reinforced_iron_hoe",
-            () -> new HoeItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.REINFORCED_IRON, -3, 2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_HORSE_ARMOR =  ITEMS.register("reinforced_iron_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -886,16 +885,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_PICKAXE =  ITEMS.register("reinforced_iron_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.REINFORCED_IRON, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_SHOVEL =  ITEMS.register("reinforced_iron_shovel",
-            () -> new ShovelItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.REINFORCED_IRON, 4, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_SWORD =  ITEMS.register("reinforced_iron_sword",
-            () -> new SwordItem(ModToolTiers.REINFORCED_IRON, 5, 5, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.REINFORCED_IRON, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_AXE =  ITEMS.register("reinforced_netherite_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.REINFORCED_NETHERITE, 11, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_BOOTS =  ITEMS.register("reinforced_netherite_boots",
             () -> new Item(new Item.Properties()));
@@ -907,7 +906,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_HOE =  ITEMS.register("reinforced_netherite_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.REINFORCED_NETHERITE, -7, 4, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_INGOT =  ITEMS.register("reinforced_netherite_ingot",
             () -> new Item(new Item.Properties()));
@@ -916,16 +915,16 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_PICKAXE =  ITEMS.register("reinforced_netherite_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.REINFORCED_NETHERITE, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_SHOVEL =  ITEMS.register("reinforced_netherite_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.REINFORCED_NETHERITE, 4, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_SPALL =  ITEMS.register("reinforced_netherite_spall",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_SWORD =  ITEMS.register("reinforced_netherite_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.REINFORCED_NETHERITE, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> SWEET_AXE =  ITEMS.register("sweet_axe",
             () -> new Item(new Item.Properties()));

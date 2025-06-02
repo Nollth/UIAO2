@@ -11,6 +11,14 @@ import net.minecraft.world.level.block.Block;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_REINFORCED_IRON_TOOL = tag("needs_reinforced_iron_tool");
+        public static final TagKey<Block> NEEDS_REINFORCED_GOLD_TOOL = tag("needs_reinforced_gold_tool");
+        public static final TagKey<Block> NEEDS_REINFORCED_DIAMOND_TOOL = tag("needs_reinforced_diamond_tool");
+        public static final TagKey<Block> NEEDS_REINFORCED_NETHERITE_TOOL = tag("needs_reinforced_netherite_tool");
+        public static final TagKey<Block> NEEDS_HEAVY_IRON_TOOL = tag("needs_heavy_iron_tool");
+        public static final TagKey<Block> NEEDS_HEAVY_GOLD_TOOL = tag("needs_heavy_gold_tool");
+        public static final TagKey<Block> NEEDS_HEAVY_DIAMOND_TOOL = tag("needs_heavy_diamond_tool");
+        public static final TagKey<Block> NEEDS_HEAVY_NETHERITE_TOOL = tag("needs_heavy_netherite_tool");
+
 
         private static TagKey<Block> tag(String name){
             return BlockTags.create(new ResourceLocation(UpgradableItemsAndOresTwo.MOD_ID, name));

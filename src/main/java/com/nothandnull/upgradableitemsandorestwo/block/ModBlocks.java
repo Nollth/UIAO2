@@ -64,16 +64,16 @@ public class    ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER)));
 
     public static final RegistryObject<Block> REINFORCED_DIAMOND_BLOCK = registerBlock("reinforced_diamond_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
 
     public static final RegistryObject<Block> REINFORCED_GOLD_BLOCK = registerBlock("reinforced_gold_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).requiresCorrectToolForDrops().strength(3.0F, 6.0F)));
 
     public static final RegistryObject<Block> REINFORCED_IRON_BLOCK = registerBlock("reinforced_iron_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(5f, 6f)));
 
     public static final RegistryObject<Block> REINFORCED_NETHERITE_BLOCK = registerBlock("reinforced_netherite_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

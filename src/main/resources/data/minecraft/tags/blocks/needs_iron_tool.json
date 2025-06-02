@@ -1,5 +1,7 @@
 {
   "values": [
-    "upgradableitemsandorestwo:reinforced_iron_block"
+    "upgradableitemsandorestwo:reinforced_iron_block",
+    "upgradableitemsandorestwo:reinforced_gold_block",
+    "upgradableitemsandorestwo:reinforced_diamond_block"
   ]
 }
