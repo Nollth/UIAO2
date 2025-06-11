@@ -1,24 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "$@$",
-    "@#@",
-    "$@$"
-  ],
-  "key": {
-    "#": {
-      "item": "upgradableitemsandorestwo:heavy_diamond_block"
-    },
-    "@": {
-      "item": "upgradableitemsandorestwo:heavy_diamond"
-    },
-    "$": {
-      "item": "upgradableitemsandorestwo:heavy_diamond_drop"
-    }
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "upgradableitemsandorestwo:heavy_diamond_coin"
+  },
+  "addition": {
+    "item": "upgradableitemsandorestwo:heavy_netherite_ingot"
   },
   "result": {
-    "item": "upgradableitemsandorestwo:heavy_diamond_coin",
-    "count": 3
+    "item": "upgradableitemsandorestwo:heavy_netherite_coin"
   }
 }

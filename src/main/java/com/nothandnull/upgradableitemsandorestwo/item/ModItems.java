@@ -321,16 +321,16 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.HEAVY_DIAMOND, 23, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_BOOTS = ITEMS.register("heavy_diamond_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_DIAMOND, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_CHESTPLATE = ITEMS.register("heavy_diamond_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_DROP = ITEMS.register("heavy_diamond_drop",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_HELMET = ITEMS.register("heavy_diamond_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_DIAMOND, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_HOE = ITEMS.register("heavy_diamond_hoe",
             () -> new HoeItem(ModToolTiers.HEAVY_DIAMOND, -9, 12.0F, new Item.Properties()));
@@ -339,7 +339,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_LEGGINGS = ITEMS.register("heavy_diamond_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_DIAMOND_PICKAXE = ITEMS.register("heavy_diamond_pickaxe",
             () -> new PickaxeItem(ModToolTiers.HEAVY_DIAMOND, 7, 0.8F, new Item.Properties()));
@@ -363,16 +363,16 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.HEAVY_GOLD, 27, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_BOOTS = ITEMS.register("heavy_golden_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_GOLD, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_CARROT = ITEMS.register("heavy_golden_carrot",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_CHESTPLATE = ITEMS.register("heavy_golden_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_GOLD, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_HELMET = ITEMS.register("heavy_golden_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_GOLD, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_HOE =  ITEMS.register("heavy_golden_hoe",
             () -> new HoeItem(ModToolTiers.HEAVY_GOLD, 3, 0.0F, new Item.Properties()));
@@ -381,7 +381,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_LEGGINGS =  ITEMS.register("heavy_golden_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_GOLD, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_PICKAXE =  ITEMS.register("heavy_golden_pickaxe",
             () -> new PickaxeItem(ModToolTiers.HEAVY_GOLD, 7, 0.8F, new Item.Properties()));
@@ -396,13 +396,13 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.HEAVY_IRON, 27, -0.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_BOOTS =  ITEMS.register("heavy_iron_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_CHESTPLATE =  ITEMS.register("heavy_iron_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_HELMET =  ITEMS.register("heavy_iron_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_IRON, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_HOE =  ITEMS.register("heavy_iron_hoe",
             () -> new HoeItem(ModToolTiers.HEAVY_IRON, -5, 8.0F, new Item.Properties()));
@@ -414,7 +414,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_LEGGINGS =  ITEMS.register("heavy_iron_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_IRON_NUGGET =  ITEMS.register("heavy_iron_nugget",
             () -> new Item(new Item.Properties()));
@@ -432,13 +432,13 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.HEAVY_NETHERITE, 23, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_BOOTS =  ITEMS.register("heavy_netherite_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_NETHERITE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_CHESTPLATE =  ITEMS.register("heavy_netherite_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_HELMET =  ITEMS.register("heavy_netherite_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_NETHERITE, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_HOE =  ITEMS.register("heavy_netherite_hoe",
             () -> new HoeItem(ModToolTiers.HEAVY_NETHERITE, -13, 12.0F, new Item.Properties()));
@@ -447,7 +447,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_LEGGINGS =  ITEMS.register("heavy_netherite_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.HEAVY_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_NETHERITE_PICKAXE =  ITEMS.register("heavy_netherite_pickaxe",
             () -> new PickaxeItem(ModToolTiers.HEAVY_NETHERITE, 7, 0.8F, new Item.Properties()));
@@ -786,16 +786,16 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.REINFORCED_DIAMOND, 11, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_BOOTS =  ITEMS.register("reinforced_diamond_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_DIAMOND, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_CHESTPLATE =  ITEMS.register("reinforced_diamond_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_DROP =  ITEMS.register("reinforced_diamond_drop",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_HELMET =  ITEMS.register("reinforced_diamond_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_DIAMOND, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_HOE =  ITEMS.register("reinforced_diamond_hoe",
             () -> new HoeItem(ModToolTiers.REINFORCED_DIAMOND, -5, 4, new Item.Properties()));
@@ -804,7 +804,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_LEGGINGS =  ITEMS.register("reinforced_diamond_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_DIAMOND_PICKAXE =  ITEMS.register("reinforced_diamond_pickaxe",
             () -> new PickaxeItem(ModToolTiers.REINFORCED_DIAMOND, 3, -1.6F, new Item.Properties()));
@@ -828,16 +828,16 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.REINFORCED_GOLD, 13, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_BOOTS =  ITEMS.register("reinforced_golden_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_GOLD, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_CARROT =  ITEMS.register("reinforced_golden_carrot",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_CHESTPLATE =  ITEMS.register("reinforced_golden_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_GOLD, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_HELMET =  ITEMS.register("reinforced_golden_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_GOLD, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_HOE =  ITEMS.register("reinforced_golden_hoe",
             () -> new HoeItem(ModToolTiers.REINFORCED_GOLD, 1, -2, new Item.Properties()));
@@ -846,7 +846,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_LEGGINGS =  ITEMS.register("reinforced_golden_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_GOLD, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_PICKAXE =  ITEMS.register("reinforced_golden_pickaxe",
             () -> new PickaxeItem(ModToolTiers.REINFORCED_GOLD, 3, -1.6F, new Item.Properties()));
@@ -861,13 +861,13 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.REINFORCED_IRON, 13, -2.2F, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_BOOTS =  ITEMS.register("reinforced_iron_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_CHESTPLATE =  ITEMS.register("reinforced_iron_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_HELMET =  ITEMS.register("reinforced_iron_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_IRON, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_HOE =  ITEMS.register("reinforced_iron_hoe",
             () -> new HoeItem(ModToolTiers.REINFORCED_IRON, -3, 2, new Item.Properties()));
@@ -879,7 +879,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_LEGGINGS =  ITEMS.register("reinforced_iron_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_IRON_NUGGET =  ITEMS.register("reinforced_iron_nugget",
             () -> new Item(new Item.Properties()));
@@ -897,13 +897,13 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.REINFORCED_NETHERITE, 11, -2, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_BOOTS =  ITEMS.register("reinforced_netherite_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_NETHERITE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_CHESTPLATE =  ITEMS.register("reinforced_netherite_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_HELMET =  ITEMS.register("reinforced_netherite_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_NETHERITE, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_HOE =  ITEMS.register("reinforced_netherite_hoe",
             () -> new HoeItem(ModToolTiers.REINFORCED_NETHERITE, -7, 4, new Item.Properties()));
@@ -912,7 +912,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_LEGGINGS =  ITEMS.register("reinforced_netherite_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.REINFORCED_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_NETHERITE_PICKAXE =  ITEMS.register("reinforced_netherite_pickaxe",
             () -> new PickaxeItem(ModToolTiers.REINFORCED_NETHERITE, 3, -1.6F, new Item.Properties()));

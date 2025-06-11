@@ -1,24 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "$@$",
-    "@#@",
-    "$@$"
-  ],
-  "key": {
-    "#": {
-      "item": "upgradableitemsandorestwo:reinforced_netherite_block"
-    },
-    "@": {
-      "item": "upgradableitemsandorestwo:reinforced_netherite_ingot"
-    },
-    "$": {
-      "item": "upgradableitemsandorestwo:reinforced_netherite_spall"
-    }
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond_coin"
+  },
+  "addition": {
+    "item": "upgradableitemsandorestwo:reinforced_netherite_ingot"
   },
   "result": {
-    "item": "upgradableitemsandorestwo:reinforced_netherite_coin",
-    "count": 3
+    "item": "upgradableitemsandorestwo:reinforced_netherite_coin"
   }
 }
