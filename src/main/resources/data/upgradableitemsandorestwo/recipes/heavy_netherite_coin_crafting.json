@@ -1,13 +1,13 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:netherite_ingot"
+    "item": "upgradableitemsandorestwo:heavy_netherite_ingot"
   },
   "base": {
-    "item": "upgradableitemsandorestwo:diamond_coin"
+    "item": "upgradableitemsandorestwo:heavy_diamond_coin"
   },
   "result": {
-    "item": "upgradableitemsandorestwo:netherite_coin"
+    "item": "upgradableitemsandorestwo:heavy_netherite_coin"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

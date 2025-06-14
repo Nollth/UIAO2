@@ -18,6 +18,11 @@ public class ModToolTiers {
                     ModTags.Blocks.NEEDS_REINFORCED_IRON_TOOL, () -> Ingredient.of(ModItems.REINFORCED_IRON_INGOT.get())),
                     new ResourceLocation(UpgradableItemsAndOresTwo.MOD_ID, "reinforced_iron"), List.of(Tiers.IRON), List.of());
 
+    public static final Tier GOLREON = TierSortingRegistry.registerTier(
+            new ForgeTier(2, 250, 6.0F, 2.0F, 14,
+                    ModTags.Blocks.NEEDS_REINFORCED_IRON_TOOL, () -> Ingredient.of(ModItems.GOLREON_INGOT.get())),
+            new ResourceLocation(UpgradableItemsAndOresTwo.MOD_ID, "golreon"), List.of(Tiers.IRON), List.of());
+
     public static final Tier REINFORCED_GOLD = TierSortingRegistry.registerTier(
             new ForgeTier(0, 64, 24.0F, 0.0F, 44,
                     ModTags.Blocks.NEEDS_REINFORCED_GOLD_TOOL, () -> Ingredient.of(ModItems.REINFORCED_GOLD_INGOT.get())),

@@ -18,6 +18,13 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_HEAVY_GOLD_TOOL = tag("needs_heavy_gold_tool");
         public static final TagKey<Block> NEEDS_HEAVY_DIAMOND_TOOL = tag("needs_heavy_diamond_tool");
         public static final TagKey<Block> NEEDS_HEAVY_NETHERITE_TOOL = tag("needs_heavy_netherite_tool");
+        public static final TagKey<Block> NEEDS_GOLREON_TOOL = tag("needs_golreon_tool");
+        public static final TagKey<Block> NEEDS_DIAMRON_TOOL = tag("needs_diamron_tool");
+        public static final TagKey<Block> NEEDS_NETHERITOND_TOOL = tag("needs_netheritond_tool");
+        public static final TagKey<Block> NEEDS_NETHORIDEN_TOOL = tag("needs_nethoriden_tool");
+        public static final TagKey<Block> NEEDS_NETTHRION_TOOL = tag("needs_netthrion_tool");
+        public static final TagKey<Block> NEEDS_GOALDMOND_TOOL = tag("needs_goaldmond_tool");
+
 
 
         private static TagKey<Block> tag(String name){

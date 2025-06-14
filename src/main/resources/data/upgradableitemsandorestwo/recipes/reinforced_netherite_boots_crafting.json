@@ -4,10 +4,10 @@
     "item": "upgradableitemsandorestwo:reinforced_netherite_ingot"
   },
   "base": {
-    "item": "upgradableitemsandorestwo:reinforced_diamond_hoe"
+    "item": "upgradableitemsandorestwo:reinforced_diamond_boots"
   },
   "result": {
-    "item": "upgradableitemsandorestwo:reinforced_netherite_hoe"
+    "item": "upgradableitemsandorestwo:reinforced_netherite_boots"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

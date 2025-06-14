@@ -4,10 +4,10 @@
     "item": "upgradableitemsandorestwo:heavy_netherite_ingot"
   },
   "base": {
-    "item": "upgradableitemsandorestwo:heavy_diamond_shovel"
+    "item": "upgradableitemsandorestwo:heavy_diamond_leggings"
   },
   "result": {
-    "item": "upgradableitemsandorestwo:heavy_netherite_shovel"
+    "item": "upgradableitemsandorestwo:heavy_netherite_leggings"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

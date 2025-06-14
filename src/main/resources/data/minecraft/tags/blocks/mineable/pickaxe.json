@@ -1,8 +1,12 @@
-{
+  {
   "values": [
     "upgradableitemsandorestwo:reinforced_iron_block",
     "upgradableitemsandorestwo:reinforced_gold_block",
     "upgradableitemsandorestwo:reinforced_netherite_block",
-    "upgradableitemsandorestwo:reinforced_diamond_block"
+    "upgradableitemsandorestwo:reinforced_diamond_block",
+    "upgradableitemsandorestwo:heavy_iron_block",
+    "upgradableitemsandorestwo:heavy_gold_block",
+    "upgradableitemsandorestwo:heavy_netherite_block",
+    "upgradableitemsandorestwo:heavy_diamond_block"
   ]
 }

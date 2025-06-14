@@ -14,25 +14,49 @@ public enum ModArmorMaterials implements ArmorMaterial {
             18, SoundEvents.ARMOR_EQUIP_IRON, 1f, 0.1f,
             () -> Ingredient.of(ModItems.REINFORCED_IRON_INGOT.get())),
 
+    GOLREON("golreon", 22, new int[]{ 4, 11, 8, 3 },
+            34, SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0.1f,
+            () -> Ingredient.of(ModItems.GOLREON_INGOT.get())),
+
     REINFORCED_GOLD("reinforced_gold", 14, new int[]{ 4, 10, 6, 2 },
             50, SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0.1f,
             () -> Ingredient.of(ModItems.REINFORCED_GOLD_INGOT.get())),
+
+    NETHORIDEN("nethoriden", 44, new int[]{ 5, 13, 9, 4 },
+            40, SoundEvents.ARMOR_EQUIP_NETHERITE, 3f, 0.1f,
+            () -> Ingredient.of(ModItems.NETHORIDEN_INGOT.get())),
 
     REINFORCED_NETHERITE("reinforced_netherite", 74, new int[]{ 6, 16, 12, 6 },
             30, SoundEvents.ARMOR_EQUIP_NETHERITE, 6f, 0.2f,
             () -> Ingredient.of(ModItems.REINFORCED_NETHERITE_INGOT.get())),
 
+    NETHERITOND("netheritond", 70, new int[]{ 6, 16, 12, 6 },
+            25, SoundEvents.ARMOR_EQUIP_NETHERITE, 5f, 0.1f,
+            () -> Ingredient.of(ModItems.NETHERITOND_INGOT.get())),
+
     REINFORCED_DIAMOND("reinforced_diamond", 66, new int[]{ 6, 16, 12, 6 },
             20, SoundEvents.ARMOR_EQUIP_DIAMOND, 4f, 0.1f,
             () -> Ingredient.of(ModItems.REINFORCED_DIAMOND.get())),
+
+    DIAMRON("diamron", 18, new int[]{ 5, 14, 11, 5 },
+            19, SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0.1f,
+            () -> Ingredient.of(ModItems.DIAMRON_INGOT.get())),
 
     HEAVY_IRON("heavy_iron", 60, new int[]{ 8, 24, 20, 8 },
             36, SoundEvents.ARMOR_EQUIP_IRON, 2f, 0.2f,
             () -> Ingredient.of(ModItems.HEAVY_IRON_INGOT.get())),
 
+    NETTHRION("netthrion", 52, new int[]{ 5, 14, 11, 5 },
+            24, SoundEvents.ARMOR_EQUIP_NETHERITE, 3f, 0.1f,
+            () -> Ingredient.of(ModItems.NETTHRION_INGOT.get())),
+
     HEAVY_GOLD("heavy_gold", 28, new int[]{ 8, 20, 12, 4 },
             100, SoundEvents.ARMOR_EQUIP_GOLD, 2f, 0.2f,
             () -> Ingredient.of(ModItems.HEAVY_GOLD_INGOT.get())),
+
+    GOALDMOND("goaldmond", 40, new int[]{ 5, 13, 9, 4 },
+            35, SoundEvents.ARMOR_EQUIP_GOLD, 2f, 0.1f,
+            () -> Ingredient.of(ModItems.GOALDMOND.get())),
 
     HEAVY_NETHERITE("heavy_netherite", 148, new int[]{ 12, 32, 24, 12 },
             60, SoundEvents.ARMOR_EQUIP_NETHERITE, 12f, 0.4f,
@@ -41,6 +65,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     HEAVY_DIAMOND("heavy_diamond", 132, new int[]{ 12, 32, 24, 12 },
             40, SoundEvents.ARMOR_EQUIP_DIAMOND, 8f, 0.2f,
             () -> Ingredient.of(ModItems.HEAVY_DIAMOND.get()));
+
 
     private final String name;
     private final int durabilityMultiplier;
