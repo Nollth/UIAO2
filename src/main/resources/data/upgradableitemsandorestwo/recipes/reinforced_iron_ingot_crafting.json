@@ -9,9 +9,10 @@
   "key": {
     "@": {
       "item": "upgradableitemsandorestwo:reinforced_iron_nugget"
-    },
-    "result": {
-      "item": "upgradableitemsandorestwo:reinforced_iron_ingot"
     }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_iron_ingot",
+    "count": 1
   }
 }

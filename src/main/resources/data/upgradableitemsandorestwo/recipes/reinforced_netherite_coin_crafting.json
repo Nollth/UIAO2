@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "upgradableitemsandorestwo:reinforced_diamond_coin"
-  },
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "upgradableitemsandorestwo:reinforced_netherite_ingot"
   },
+  "base": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond_coin"
+  },
   "result": {
     "item": "upgradableitemsandorestwo:reinforced_netherite_coin"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    "@ @",
+    "@ @"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:reinforced_diamond"
+    }
+  },
+    "result": {
+      "item": "upgradableitemsandorestwo:reinforced_diamond_boots"
+    }
+  }
