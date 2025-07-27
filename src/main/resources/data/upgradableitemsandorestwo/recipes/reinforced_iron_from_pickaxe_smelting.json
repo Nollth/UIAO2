@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:reinforced_iron_pickaxe",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_iron_ingot",
+    "count": 3
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

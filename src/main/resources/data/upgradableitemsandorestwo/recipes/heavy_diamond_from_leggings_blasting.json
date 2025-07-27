@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_diamond_leggings",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_diamond",
+    "count": 7
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

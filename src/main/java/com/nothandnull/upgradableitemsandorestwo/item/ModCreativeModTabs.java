@@ -18,6 +18,7 @@ public class ModCreativeModTabs {
            CREATIVE_MODE_TABS.register("uiaotwo_blocks", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.KITTY_BLOCK.get()))
                    .title(Component.translatable("creativetab.uiaotwo_blocks"))
                    .displayItems((itemDisplayParameters, output) -> {
+                       output.accept(ModBlocks.MAGHEMITE.get());
                        output.accept(ModBlocks.TEST_BLOCK.get());
                        output.accept(ModBlocks.TEST_BLOCK_TWO.get());
                        output.accept(ModBlocks.KITTY_BLOCK.get());
@@ -44,6 +45,7 @@ public class ModCreativeModTabs {
             CREATIVE_MODE_TABS.register("uiaotwo_tools", () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.KITTY_MASTER.get()))
                     .title(Component.translatable("creativetab.uiaotwo_tools"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.WAY_BACK_COMPASS.get());
                         output.accept(ModItems.KITTY_AXE.get());
                         output.accept(ModItems.KITTY_PICKAXE.get());
                         output.accept(ModItems.KITTY_SHOVEL.get());
@@ -154,9 +156,10 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.FLESH.get());
                         output.accept(ModItems.REINFORCED_GOLDEN_APPLE.get());
                         output.accept(ModItems.HEAVY_GOLDEN_APPLE.get());
+                        output.accept(ModItems.REINFORCED_ENCHANTED_GOLDEN_APPLE.get());
+                        output.accept(ModItems.HEAVY_ENCHANTED_GOLDEN_APPLE.get());
                         output.accept(ModItems.REINFORCED_GOLDEN_CARROT.get());
                         output.accept(ModItems.HEAVY_GOLDEN_CARROT.get());
-
                     })
                     .build());
 

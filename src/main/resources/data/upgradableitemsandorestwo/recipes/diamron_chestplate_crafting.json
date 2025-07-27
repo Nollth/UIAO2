@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@ @",
+    "@@@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:diamron_ingot"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:diamron_chestplate"
+  }
+}

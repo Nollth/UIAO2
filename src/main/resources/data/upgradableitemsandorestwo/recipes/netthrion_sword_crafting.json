@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " @ ",
+    " @ ",
+    " # "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:netthrion_ingot"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:netthrion_sword"
+  }
+}

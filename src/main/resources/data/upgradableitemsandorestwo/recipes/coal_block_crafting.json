@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " @ ",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:burning_souls"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:coal_block",
+    "count": 3
+  }
+}

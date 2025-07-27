@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:chainmond_helmet",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:chainmond",
+    "count": 5
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

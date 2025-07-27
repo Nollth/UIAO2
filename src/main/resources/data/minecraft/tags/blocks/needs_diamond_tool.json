@@ -2,6 +2,9 @@
   "values": [
     "upgradableitemsandorestwo:reinforced_gold_block",
     "upgradableitemsandorestwo:reinforced_diamond_block",
-    "upgradableitemsandorestwo:reinforced_iron_block"
+    "upgradableitemsandorestwo:reinforced_iron_block",
+    "upgradableitemsandorestwo:goaldmond_block",
+    "upgradableitemsandorestwo:diamron_block",
+    "upgradableitemsandorestwo:golreon_block"
   ]
 }

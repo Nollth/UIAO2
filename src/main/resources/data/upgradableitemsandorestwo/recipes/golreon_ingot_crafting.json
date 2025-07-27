@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " @ ",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:golreon_block"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:golreon_ingot",
+    "count": 9
+
+  }
+}

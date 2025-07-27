@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_netherite_boots",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_netherite_ingot"
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

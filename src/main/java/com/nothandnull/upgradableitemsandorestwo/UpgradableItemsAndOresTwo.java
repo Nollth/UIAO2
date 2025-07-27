@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.nothandnull.upgradableitemsandorestwo.block.ModBlocks;
 import com.nothandnull.upgradableitemsandorestwo.item.ModCreativeModTabs;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -44,10 +46,20 @@ public class UpgradableItemsAndOresTwo {
     public void onServerStarting(ServerStartingEvent event) {
     }
 
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = UpgradableItemsAndOresTwo.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                ItemProperties.register(ModItems.WAY_BACK_COMPASS.get(),
+                        new ResourceLocation("angle"),
+                        (stack, level, entity, seed) -> {
+                            if (entity == null) {
+                                return 0.0F;
+                            }
+                            return stack.getOrCreateTag().getFloat("angle");
+                        });
+            });
         }
     }
 }

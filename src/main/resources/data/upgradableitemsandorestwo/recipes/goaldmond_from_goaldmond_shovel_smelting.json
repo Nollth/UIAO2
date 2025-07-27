@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:goaldmond_shovel",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:goaldmond"
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

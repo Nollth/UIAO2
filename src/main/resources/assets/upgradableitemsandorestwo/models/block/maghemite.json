@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "upgradableitemsandorestwo:block/maghemite_side",
+    "north": "upgradableitemsandorestwo:block/maghemite_side",
+    "south": "upgradableitemsandorestwo:block/maghemite_side",
+    "east": "upgradableitemsandorestwo:block/maghemite_side",
+    "west": "upgradableitemsandorestwo:block/maghemite_side",
+    "up": "upgradableitemsandorestwo:block/maghemite_top",
+    "down": "upgradableitemsandorestwo:block/maghemite_top"
+  }
+}

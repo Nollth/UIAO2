@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " @ ",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:goaldmond_block"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:goaldmond",
+    "count": 9
+  }
+}

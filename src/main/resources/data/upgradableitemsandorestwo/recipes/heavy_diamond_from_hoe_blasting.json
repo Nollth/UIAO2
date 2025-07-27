@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_diamond_hoe",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_diamond",
+    "count": 2
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

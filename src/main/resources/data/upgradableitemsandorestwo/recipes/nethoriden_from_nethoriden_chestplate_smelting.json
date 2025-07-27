@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:nethoriden_chestplate",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:nethoriden_ingot",
+    "count": 8
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

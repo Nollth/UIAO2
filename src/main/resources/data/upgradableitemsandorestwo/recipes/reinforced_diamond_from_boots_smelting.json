@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond_boots",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond",
+    "count": 4
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

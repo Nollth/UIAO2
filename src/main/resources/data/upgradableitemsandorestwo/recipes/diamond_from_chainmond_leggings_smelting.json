@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:chainmond_leggings",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:chainmond",
+    "count": 7
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

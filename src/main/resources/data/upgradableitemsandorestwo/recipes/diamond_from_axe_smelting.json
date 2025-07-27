@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:diamond_axe",
+    "nbt": {}
+  },
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 3
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}
