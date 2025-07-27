@@ -26,80 +26,153 @@ public class WayBackCompass extends Item {
     private static final String TAG_MAGHEMITE_POS = "MaghemitePos";
     private static final String TAG_ANGLE = "angle";
     private static final String TAG_TRACKING = "Tracking";
+    private static final String TAG_LAST_USE = "LastUse";
     private static final Random RANDOM = new Random();
     private static final String TAG_LAST_ANGLE = "LastAngle";
+    private static final int COOLDOWN_TICKS = 300;
 
     public WayBackCompass(Properties properties) {
         super(properties);
     }
 
+
+    private void spawnPortalParticles(Level level, BlockPos pos, double yOffset) {
+        if (level.isClientSide) {
+            for (int i = 0; i < 50; i++) {
+                double angle = i * (Math.PI * 2) / 20;
+                double radius = Math.sin(i * 0.1) * 0.5;
+                double x = pos.getX() + 0.5 + Math.cos(angle) * radius;
+                double y = pos.getY() - 1.0 + (i * 0.05);
+                double z = pos.getZ() + 0.5 + Math.sin(angle) * radius;
+
+                level.addParticle(
+                        ParticleTypes.PORTAL,
+                        x, y, z,
+                        Math.cos(angle) * 0.01,
+                        0.2,
+                        Math.sin(angle) * 0.01
+                );
+            }
+
+            for (int i = 0; i < 30; i++) {
+                double angle = Math.random() * Math.PI * 2;
+                double radius = Math.random() * 0.5;
+                double x = pos.getX() + 0.5 + Math.cos(angle) * radius;
+                double y = pos.getY() - 1.0 + Math.random() * 2.0;
+                double z = pos.getZ() + 0.5 + Math.sin(angle) * radius;
+
+                level.addParticle(
+                        ParticleTypes.PORTAL,
+                        x, y, z,
+                        Math.cos(angle) * 0.1,
+                        Math.random() * 0.1,
+                        Math.sin(angle) * 0.1
+                );
+            }
+
+            level.playLocalSound(
+                    pos.getX() + 0.5,
+                    pos.getY() + yOffset,
+                    pos.getZ() + 0.5,
+                    SoundEvents.ENDERMAN_TELEPORT,
+                    SoundSource.PLAYERS,
+                    1.0F,
+                    0.25F,
+                    false
+            );
+        }
+    }
+
     private void teleportToMaghemite(Level level, Player player, ItemStack stack) {
         CompoundTag tag = stack.getTag();
         if (tag != null && tag.getBoolean(TAG_TRACKING) && tag.contains(TAG_MAGHEMITE_POS)) {
+            if (!level.dimension().equals(Level.OVERWORLD)) {
+                player.displayClientMessage(Component.literal("Try At The Overworld.")
+                        .withStyle(ChatFormatting.RED), true);
+                return;
+            }
+
             BlockPos maghemitePos = BlockPos.of(tag.getLong(TAG_MAGHEMITE_POS));
+            BlockPos playerPos = player.blockPosition();
+
+            if (!level.isClientSide) {
+                level.getChunkAt(maghemitePos);
+                level.getChunkAt(playerPos);
+            }
 
             if (level.getBlockState(maghemitePos).getBlock() == ModBlocks.MAGHEMITE.get()) {
+                spawnPortalParticles(level, playerPos, 0.5);
+
                 if (!level.isClientSide) {
+                    player.stopUsingItem();
+
                     player.teleportTo(
                             maghemitePos.getX() + 0.5D,
                             maghemitePos.getY() + 1.0D,
                             maghemitePos.getZ() + 0.5D
                     );
 
-                    tag.remove(TAG_MAGHEMITE_POS);
-                    tag.putBoolean(TAG_TRACKING, false);
+                    tag.putLong(TAG_LAST_USE, level.getGameTime());
 
-                    player.displayClientMessage(Component.literal("Teleported")
+                    player.displayClientMessage(Component.literal("Teleported.")
                             .withStyle(ChatFormatting.GREEN), true);
                 }
 
-                if (level.isClientSide) {
-                    level.playSound(
-                            player,
-                            player.getX(),
-                            player.getY(),
-                            player.getZ(),
-                            SoundEvents.ENDERMAN_TELEPORT,
-                            SoundSource.PLAYERS,
-                            1.0F,
-                            1.0F
-                    );
-
-                    for (int i = 0; i < 32; ++i) {
-                        level.addParticle(
-                                ParticleTypes.PORTAL,
-                                player.getX(),
-                                player.getY() + player.getRandom().nextDouble() * 2.0D,
-                                player.getZ(),
-                                player.getRandom().nextGaussian() * 0.02D,
-                                0.0D,
-                                player.getRandom().nextGaussian() * 0.02D
-                        );
-                    }
-
-                    for (int i = 0; i < 32; ++i) {
-                        level.addParticle(
-                                ParticleTypes.PORTAL,
-                                maghemitePos.getX() + 0.5D,
-                                maghemitePos.getY() + player.getRandom().nextDouble() * 2.0D,
-                                maghemitePos.getZ() + 0.5D,
-                                player.getRandom().nextGaussian() * 0.02D,
-                                0.0D,
-                                player.getRandom().nextGaussian() * 0.02D
-                        );
-                    }
-
-                    level.playSound(
-                            null,
-                            maghemitePos,
-                            SoundEvents.ENDERMAN_TELEPORT,
-                            SoundSource.PLAYERS,
-                            1.0F,
-                            1.0F
-                    );
-                }
+                spawnPortalParticles(level, maghemitePos, 1.0);
             }
         }
+    }
+
+    @Override
+    public InteractionResult useOn(UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        ItemStack itemStack = context.getItemInHand();
+        Player player = context.getPlayer();
+
+        if (!level.dimension().equals(Level.OVERWORLD)) {
+            if (player != null) {
+                player.displayClientMessage(Component.literal("Try At The Overworld.")
+                        .withStyle(ChatFormatting.RED), true);
+            }
+            return InteractionResult.PASS;
+        }
+
+        if (level.getBlockState(pos).getBlock() == ModBlocks.MAGHEMITE.get()) {
+            CompoundTag tag = itemStack.getOrCreateTag();
+
+            if (tag.getBoolean(TAG_TRACKING)) {
+                if (isTracking(tag, pos)) {
+                    tag.remove(TAG_MAGHEMITE_POS);
+                    tag.putBoolean(TAG_TRACKING, false);
+
+                    if (player != null && level.isClientSide) {
+                        player.displayClientMessage(Component.literal("Turned Off.")
+                                .withStyle(ChatFormatting.WHITE), true);
+                    }
+                    return InteractionResult.SUCCESS;
+                } else {
+                    if (player != null && level.isClientSide) {
+                        player.displayClientMessage(Component.literal("Already Turned.")
+                                .withStyle(ChatFormatting.YELLOW), true);
+                    }
+                    return InteractionResult.PASS;
+                }
+            }
+
+            tag.putBoolean(TAG_TRACKING, true);
+            tag.putLong(TAG_MAGHEMITE_POS, pos.asLong());
+
+            if (player != null && level.isClientSide) {
+                String coords = String.format("X: %d, Y: %d, Z: %d",
+                        pos.getX(), pos.getY(), pos.getZ());
+                player.displayClientMessage(Component.literal(coords)
+                        .withStyle(ChatFormatting.WHITE), true);
+            }
+            return InteractionResult.SUCCESS;
+        }
+
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -116,6 +189,19 @@ public class WayBackCompass extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
+        CompoundTag tag = itemstack.getOrCreateTag();
+
+        if (tag.contains(TAG_LAST_USE)) {
+            long lastUse = tag.getLong(TAG_LAST_USE);
+            long currentTime = level.getGameTime();
+
+            if (currentTime - lastUse < COOLDOWN_TICKS) {
+                int remainingSeconds = (int)((COOLDOWN_TICKS - (currentTime - lastUse)) / 20);
+                player.displayClientMessage(Component.literal("Wait " + remainingSeconds + " second(s).")
+                        .withStyle(ChatFormatting.RED), true);
+                return InteractionResultHolder.fail(itemstack);
+            }
+        }
 
         if (itemstack.getOrCreateTag().getBoolean(TAG_TRACKING)) {
             player.startUsingItem(hand);
@@ -137,10 +223,11 @@ public class WayBackCompass extends Item {
             if (tag.getBoolean(TAG_TRACKING) && tag.contains(TAG_MAGHEMITE_POS)) {
                 BlockPos maghemitePos = BlockPos.of(tag.getLong(TAG_MAGHEMITE_POS));
 
-                if (!level.getBlockState(maghemitePos).is(ModBlocks.MAGHEMITE.get())) {
+                if (level.dimension().equals(Level.OVERWORLD) &&
+                        !level.getBlockState(maghemitePos).is(ModBlocks.MAGHEMITE.get())) {
                     tag.remove(TAG_MAGHEMITE_POS);
                     tag.putBoolean(TAG_TRACKING, false);
-                    player.displayClientMessage(Component.literal("Broken ")
+                    player.displayClientMessage(Component.literal("Broken.")
                             .withStyle(ChatFormatting.RED), true);
                 }
             }
@@ -199,50 +286,6 @@ public class WayBackCompass extends Item {
         if (finalAngle < 0) finalAngle += 1.0D;
 
         return finalAngle;
-    }
-
-    @Override
-    public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
-        BlockPos pos = context.getClickedPos();
-        ItemStack itemStack = context.getItemInHand();
-        Player player = context.getPlayer();
-
-        if (level.getBlockState(pos).getBlock() == ModBlocks.MAGHEMITE.get()) {
-            CompoundTag tag = itemStack.getOrCreateTag();
-
-            if (tag.getBoolean(TAG_TRACKING)) {
-                if (isTracking(tag, pos)) {
-                    tag.remove(TAG_MAGHEMITE_POS);
-                    tag.putBoolean(TAG_TRACKING, false);
-
-                    if (player != null && level.isClientSide) {
-                        player.displayClientMessage(Component.literal("Turned Off")
-                                .withStyle(ChatFormatting.WHITE), true);
-                    }
-                    return InteractionResult.SUCCESS;
-                } else {
-                    if (player != null && level.isClientSide) {
-                        player.displayClientMessage(Component.literal("Already Turned")
-                                .withStyle(ChatFormatting.YELLOW), true);
-                    }
-                    return InteractionResult.PASS;
-                }
-            }
-
-            tag.putBoolean(TAG_TRACKING, true);
-            tag.putLong(TAG_MAGHEMITE_POS, pos.asLong());
-
-            if (player != null && level.isClientSide) {
-                String coords = String.format("X: %d, Y: %d, Z: %d",
-                        pos.getX(), pos.getY(), pos.getZ());
-                player.displayClientMessage(Component.literal(coords)
-                        .withStyle(ChatFormatting.WHITE), true);
-            }
-            return InteractionResult.SUCCESS;
-        }
-
-        return InteractionResult.PASS;
     }
 
     private double calculateAngle(Player player, BlockPos target) {

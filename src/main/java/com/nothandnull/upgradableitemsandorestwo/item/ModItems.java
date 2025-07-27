@@ -18,7 +18,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, UpgradableItemsAndOresTwo.MOD_ID);
 
     public static final RegistryObject<Item> OWU_BOOTS = ITEMS.register("owu_boots",
-            () -> new ArmorItem(ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.BOOTS, new Item.Properties()){
+            () -> new UnbreakableArmor
+                    (ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.BOOTS, new Item.Properties()){
                 @Override
                 public boolean isFoil(ItemStack stack) {
                     return true;
@@ -26,7 +27,8 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> OWU_CHESTPLATE = ITEMS.register("owu_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.CHESTPLATE, new Item.Properties()){
+            () -> new UnbreakableArmor
+                    (ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.CHESTPLATE, new Item.Properties()){
                 @Override
                 public boolean isFoil(ItemStack stack) {
                     return true;
@@ -34,7 +36,8 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> OWU_HELMET = ITEMS.register("owu_helmet",
-            () -> new ArmorItem(ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.HELMET, new Item.Properties()){
+            () -> new UnbreakableArmor
+                    (ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.HELMET, new Item.Properties()){
                 @Override
                 public boolean isFoil(ItemStack stack) {
                     return true;
@@ -42,7 +45,8 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> OWU_LEGGINGS = ITEMS.register("owu_leggings",
-            () -> new ArmorItem(ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.LEGGINGS, new Item.Properties()){
+            () -> new UnbreakableArmor
+                    (ModArmorMaterials.UNBREAKABLE, ArmorItem.Type.LEGGINGS, new Item.Properties()){
                 @Override
                 public boolean isFoil(ItemStack stack) {
                     return true;
