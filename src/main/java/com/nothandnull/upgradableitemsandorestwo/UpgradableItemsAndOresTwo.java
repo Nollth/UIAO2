@@ -5,6 +5,7 @@ import com.nothandnull.upgradableitemsandorestwo.block.ModBlocks;
 import com.nothandnull.upgradableitemsandorestwo.item.ModCreativeModTabs;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -54,10 +55,11 @@ public class UpgradableItemsAndOresTwo {
                 ItemProperties.register(ModItems.WAY_BACK_COMPASS.get(),
                         new ResourceLocation("angle"),
                         (stack, level, entity, seed) -> {
-                            if (entity == null) {
+                            if (entity == null || stack == null) {
                                 return 0.0F;
                             }
-                            return stack.getOrCreateTag().getFloat("angle");
+                            CompoundTag tag = stack.getTag();
+                            return tag != null ? tag.getFloat("angle") : 0.0F;
                         });
             });
         }

@@ -76,8 +76,6 @@ public class ArmorEventHandler {
             player.getAbilities().mayfly = true;
             player.getFoodData().setFoodLevel(20);
             player.getFoodData().setSaturation(20f);
-        } else {
-                player.onUpdateAbilities();
             }
         }
 

@@ -17,22 +17,38 @@ public class WayBackCompassEvents {
 
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        Player player = event.player;
-        ItemStack heldItem = player.getMainHandItem();
+        if (event.phase != TickEvent.Phase.END) return;
 
-        if (heldItem.getItem() instanceof WayBackCompass && player.isUsingItem()) {
-            if (!holdingTimes.containsKey(player)) {
-                holdingTimes.put(player, System.currentTimeMillis());
-            }
+        Player player = event.player;
+        if (player == null || player.level().isClientSide()) return;
+
+        ItemStack heldItem = player.getMainHandItem();
+        if (heldItem.isEmpty() || !(heldItem.getItem() instanceof WayBackCompass)) {
+            holdingTimes.remove(player);
+            return;
+        }
+
+        if (player.isUsingItem()) {
+            holdingTimes.putIfAbsent(player, System.currentTimeMillis());
 
             long holdTime = System.currentTimeMillis() - holdingTimes.get(player);
             if (holdTime >= 5000) {
                 CompoundTag tag = heldItem.getTag();
                 if (tag != null && tag.contains("LodestonePos")) {
-                    BlockPos targetPos = BlockPos.of(tag.getLong("LodestonePos"));
-                    player.teleportTo(targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5);
-                    holdingTimes.remove(player);
+                    try {
+                        long pos = tag.getLong("LodestonePos");
+                        BlockPos targetPos = BlockPos.of(pos);
+                        if (targetPos != null) {
+                            player.teleportTo(targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5);
+                        }
+                    } catch (Exception e) {
+                        CompoundTag newTag = heldItem.getOrCreateTag();
+                        if (newTag.contains("LodestonePos")) {
+                            newTag.remove("LodestonePos");
+                        }
+                    }
                 }
+                holdingTimes.remove(player);
             }
         } else {
             holdingTimes.remove(player);
