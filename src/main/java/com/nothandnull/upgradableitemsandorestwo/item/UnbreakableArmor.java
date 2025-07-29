@@ -50,24 +50,6 @@ public class UnbreakableArmor extends ArmorItem {
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level world, Player player) {
-        if (!world.isClientSide()) {
-            if (isWearingFullSet(player)) {
-                player.setInvulnerable(true);
-                player.setAirSupply(player.getMaxAirSupply());
-                player.clearFire();
-                player.setRemainingFireTicks(0);
-                player.removeAllEffects();
-                player.setHealth(player.getMaxHealth());
-                player.getFoodData().setFoodLevel(20);
-                player.getFoodData().setSaturation(20f);
-            } else {
-                player.setInvulnerable(false);
-            }
-        }
-    }
-
-    @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
             return 0;
     }
