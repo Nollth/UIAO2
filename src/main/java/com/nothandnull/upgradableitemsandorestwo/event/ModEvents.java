@@ -2,19 +2,17 @@ package com.nothandnull.upgradableitemsandorestwo.event;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.level.BlockEvent;
-import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -92,629 +90,160 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void addCustomTrades(VillagerTradesEvent event) {
-        if(event.getType() == VillagerProfession.WEAPONSMITH){
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-        }
-
-        if(event.getType() == VillagerProfession.TOOLSMITH){
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-        }
-
-        if(event.getType() == VillagerProfession.ARMORER) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-        }
-
-        if(event.getType() == VillagerProfession.CLERIC) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(5).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 3),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHERITOND_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.NETTHRION_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOALDMOND.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLD_COIN.get(), 9),
-                    new ItemStack(ModItems.GOLREON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-
-            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemStack(ModItems.IRON_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
-                    new ItemStack(ModItems.DIAMRON_INGOT.get(), 6),
-                    64, 10, 0.05F));
-        }
+    public static void addCustomTrades(WandererTradesEvent event) {
+        List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
+        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_DIAMOND.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.NETHERITOND_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.NETTHRION_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.GOALDMOND.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.GOLREON_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.DIAMRON_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_IRON_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_IRON_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_IRON_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_GOLD_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_DIAMOND.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.REINFORCED_NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.HEAVY_NETHERITE_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_GOLD_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_DIAMOND.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.REINFORCED_NETHERITE_INGOT.get(), 6),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.NETHERITOND_INGOT.get(), 12),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.NETTHRION_INGOT.get(), 12),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.NETHERITE_COIN.get(), 9),
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.NETHORIDEN_INGOT.get(), 12),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.GOALDMOND.get(), 12),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.GOLD_COIN.get(), 9),
+                new ItemStack(ModItems.GOLREON_INGOT.get(), 12),
+                64, 10, 0.05F));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemStack(ModItems.IRON_COIN.get(), 9),
+                new ItemStack(ModItems.DIAMOND_COIN.get(), 9),
+                new ItemStack(ModItems.DIAMRON_INGOT.get(), 12),
+                64, 10, 0.05F));
     }
 }

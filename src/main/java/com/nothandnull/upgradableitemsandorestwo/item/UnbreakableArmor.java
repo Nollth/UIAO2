@@ -8,6 +8,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 
 import java.util.function.Consumer;
@@ -31,7 +33,9 @@ public class UnbreakableArmor extends ArmorItem {
     private boolean isAlternativeMode(ItemStack stack) {
         if (stack.hasTag()) {
             CompoundTag tag = stack.getTag();
-            return tag.getBoolean("alternative_mode");
+            if (tag != null) {
+                return tag.getBoolean("alternative_mode");
+            }
         }
         return false;
     }
@@ -50,7 +54,6 @@ public class UnbreakableArmor extends ArmorItem {
         if (!world.isClientSide()) {
             if (isWearingFullSet(player)) {
                 player.setInvulnerable(true);
-                player.getAbilities().mayfly = true;
                 player.setAirSupply(player.getMaxAirSupply());
                 player.clearFire();
                 player.setRemainingFireTicks(0);
@@ -62,6 +65,12 @@ public class UnbreakableArmor extends ArmorItem {
                 player.setInvulnerable(false);
             }
         }
+    }
+
+    @Override
+    public void onCraftedBy(ItemStack stack, Level level, Player player) {
+        super.onCraftedBy(stack, level, player);
+        stack.enchant(Enchantments.BINDING_CURSE, 1);
     }
 
     @Override
@@ -77,7 +86,16 @@ public class UnbreakableArmor extends ArmorItem {
 
     @Override
     public boolean isEnchantable(ItemStack stack) {
-        return false;
+        return !hasBindingCurse(stack);
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return enchantment == Enchantments.BINDING_CURSE;
+    }
+
+    private boolean hasBindingCurse(ItemStack stack) {
+        return stack.getEnchantmentLevel(Enchantments.BINDING_CURSE) > 0;
     }
 
     @Override

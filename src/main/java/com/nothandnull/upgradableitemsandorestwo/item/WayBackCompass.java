@@ -23,8 +23,8 @@ import net.minecraft.world.level.Level;
 import java.util.Random;
 
 public class WayBackCompass extends Item {
-    private static final String TAG_MAGHEMITE_POS = "MaghemitePos";
-    private static final String TAG_ANGLE = "angle";
+    public static final String TAG_MAGHEMITE_POS = "MaghemitePos";
+    public static final String TAG_ANGLE = "angle";
     private static final String TAG_TRACKING = "Tracking";
     private static final String TAG_LAST_USE = "LastUse";
     private static final Random RANDOM = new Random();
@@ -34,7 +34,6 @@ public class WayBackCompass extends Item {
     public WayBackCompass(Properties properties) {
         super(properties);
     }
-
 
     private void spawnPortalParticles(Level level, BlockPos pos, double yOffset) {
         if (level.isClientSide) {
@@ -133,7 +132,7 @@ public class WayBackCompass extends Item {
         if (!level.dimension().equals(Level.OVERWORLD)) {
             if (player != null) {
                 player.displayClientMessage(Component.literal("Try At The Overworld.")
-                        .withStyle(ChatFormatting.RED), true);
+                        .withStyle(ChatFormatting.DARK_GRAY), true);
             }
             return InteractionResult.PASS;
         }
@@ -141,7 +140,7 @@ public class WayBackCompass extends Item {
         if (level.getBlockState(pos).getBlock() == ModBlocks.MAGHEMITE.get()) {
             CompoundTag tag = itemStack.getOrCreateTag();
 
-            if (tag.getBoolean(TAG_TRACKING)) {
+            if (tag.contains(TAG_TRACKING) && tag.getBoolean(TAG_TRACKING)) {
                 if (isTracking(tag, pos)) {
                     tag.remove(TAG_MAGHEMITE_POS);
                     tag.putBoolean(TAG_TRACKING, false);

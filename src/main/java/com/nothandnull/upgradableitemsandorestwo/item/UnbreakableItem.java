@@ -17,4 +17,9 @@ public class UnbreakableItem extends Item {
     public boolean isRepairable(ItemStack stack) {
         return false;
     }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
 }

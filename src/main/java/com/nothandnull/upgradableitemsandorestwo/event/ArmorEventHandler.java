@@ -70,14 +70,30 @@ public class ArmorEventHandler {
 
         Player player = event.player;
 
+        boolean wasAllowFlying = player.getAbilities().mayfly;
+        boolean wasFlying = player.getAbilities().flying;
+
         if (isWearingFullSet(player)) {
             player.setHealth(player.getMaxHealth());
             player.removeAllEffects();
             player.getAbilities().mayfly = true;
+            if (wasFlying) {
+                player.getAbilities().flying = true;
+            }
             player.getFoodData().setFoodLevel(20);
             player.getFoodData().setSaturation(20f);
+        } else {
+            if (!player.isCreative() && !player.isSpectator() && !wasAllowFlying || !isWearingFullSet(player)) {
+                player.getAbilities().mayfly = false;
+                player.getAbilities().flying = false;
             }
         }
+
+        if (wasAllowFlying != player.getAbilities().mayfly ||
+                wasFlying != player.getAbilities().flying) {
+            player.onUpdateAbilities();
+        }
+    }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onLivingEquipmentChange(LivingEquipmentChangeEvent event) {
@@ -206,5 +222,4 @@ public class ArmorEventHandler {
             event.setCanceled(true);
         }
     }
-
 }

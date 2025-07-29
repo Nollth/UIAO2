@@ -11,6 +11,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.nothandnull.upgradableitemsandorestwo.item.WayBackCompass.TAG_MAGHEMITE_POS;
+
 public class WayBackCompassEvents {
     private static final Map<Player, Long> holdingTimes = new HashMap<>();
     private static final int TELEPORT_DELAY_TICKS = 100;
@@ -33,18 +35,17 @@ public class WayBackCompassEvents {
 
             long holdTime = System.currentTimeMillis() - holdingTimes.get(player);
             if (holdTime >= 5000) {
-                CompoundTag tag = heldItem.getTag();
-                if (tag != null && tag.contains("LodestonePos")) {
+                CompoundTag tag = heldItem.getOrCreateTag();
+                if (tag.contains(TAG_MAGHEMITE_POS)) {
                     try {
-                        long pos = tag.getLong("LodestonePos");
+                        long pos = tag.getLong(TAG_MAGHEMITE_POS);
                         BlockPos targetPos = BlockPos.of(pos);
                         if (targetPos != null) {
                             player.teleportTo(targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5);
                         }
                     } catch (Exception e) {
-                        CompoundTag newTag = heldItem.getOrCreateTag();
-                        if (newTag.contains("LodestonePos")) {
-                            newTag.remove("LodestonePos");
+                        if (tag.contains(TAG_MAGHEMITE_POS)) {
+                            tag.remove(TAG_MAGHEMITE_POS);
                         }
                     }
                 }

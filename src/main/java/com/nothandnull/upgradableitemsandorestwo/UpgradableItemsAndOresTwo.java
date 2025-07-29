@@ -2,8 +2,10 @@ package com.nothandnull.upgradableitemsandorestwo;
 
 import com.mojang.logging.LogUtils;
 import com.nothandnull.upgradableitemsandorestwo.block.ModBlocks;
+import com.nothandnull.upgradableitemsandorestwo.event.WayBackCompassEvents;
 import com.nothandnull.upgradableitemsandorestwo.item.ModCreativeModTabs;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
+import com.nothandnull.upgradableitemsandorestwo.item.WayBackCompass;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +36,8 @@ public class UpgradableItemsAndOresTwo {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        MinecraftForge.EVENT_BUS.register(new WayBackCompassEvents());
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -47,7 +51,7 @@ public class UpgradableItemsAndOresTwo {
     public void onServerStarting(ServerStartingEvent event) {
     }
 
-    @Mod.EventBusSubscriber(modid = UpgradableItemsAndOresTwo.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
@@ -58,8 +62,9 @@ public class UpgradableItemsAndOresTwo {
                             if (entity == null || stack == null) {
                                 return 0.0F;
                             }
-                            CompoundTag tag = stack.getTag();
-                            return tag != null ? tag.getFloat("angle") : 0.0F;
+                            CompoundTag tag = stack.getOrCreateTag();
+                            return tag.contains(WayBackCompass.TAG_ANGLE) ?
+                                    tag.getFloat(WayBackCompass.TAG_ANGLE) : 0.0F;
                         });
             });
         }
