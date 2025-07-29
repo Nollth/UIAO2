@@ -8,12 +8,17 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -83,7 +88,7 @@ public class ArmorEventHandler {
             player.getFoodData().setFoodLevel(20);
             player.getFoodData().setSaturation(20f);
         } else {
-            if (!player.isCreative() && !player.isSpectator() && !wasAllowFlying || !isWearingFullSet(player)) {
+            if (!player.isCreative() && !player.isSpectator() && !wasAllowFlying && !isWearingFullSet(player)) {
                 player.getAbilities().mayfly = false;
                 player.getAbilities().flying = false;
             }
@@ -119,6 +124,32 @@ public class ArmorEventHandler {
                 event.getEntity().kill();
                 event.getEntity().setItemSlot(event.getSlot(), ItemStack.EMPTY);
             }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onItemSpawn(EntityJoinLevelEvent event) {
+        if (event.getEntity() instanceof ItemEntity itemEntity) {
+            ItemStack stack = itemEntity.getItem();
+            if (stack.getItem() instanceof UnbreakableArmor armor && !armor.hasBindingCurse(stack)) {
+                stack.enchant(Enchantments.BINDING_CURSE, 1);
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
+        ItemStack stack = event.getCrafting();
+        if (stack.getItem() instanceof UnbreakableArmor armor && !armor.hasBindingCurse(stack)) {
+            stack.enchant(Enchantments.BINDING_CURSE, 1);
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onItemPickup(EntityItemPickupEvent event) {
+        ItemStack stack = event.getItem().getItem();
+        if (stack.getItem() instanceof UnbreakableArmor armor && !armor.hasBindingCurse(stack)) {
+            stack.enchant(Enchantments.BINDING_CURSE, 1);
         }
     }
 

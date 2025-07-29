@@ -68,16 +68,33 @@ public class UnbreakableArmor extends ArmorItem {
     }
 
     @Override
-    public void onCraftedBy(ItemStack stack, Level level, Player player) {
-        super.onCraftedBy(stack, level, player);
-        stack.enchant(Enchantments.BINDING_CURSE, 1);
-    }
-
-    @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
             return 0;
     }
 
+    private void addBindingCurse(ItemStack stack) {
+        stack.enchant(Enchantments.BINDING_CURSE, 1);
+    }
+
+    @Override
+    public ItemStack getDefaultInstance() {
+        ItemStack stack = super.getDefaultInstance();
+        addBindingCurse(stack);
+        return stack;
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
+        if (!stack.isEnchanted()) {
+            stack.enchant(Enchantments.BINDING_CURSE, 1);
+        }
+    }
+
+    @Override
+    public void onCraftedBy(ItemStack stack, Level level, Player player) {
+        super.onCraftedBy(stack, level, player);
+        addBindingCurse(stack);
+    }
 
     @Override
     public boolean isDamageable(ItemStack stack) {
@@ -94,8 +111,8 @@ public class UnbreakableArmor extends ArmorItem {
         return enchantment == Enchantments.BINDING_CURSE;
     }
 
-    private boolean hasBindingCurse(ItemStack stack) {
-        return stack.getEnchantmentLevel(Enchantments.BINDING_CURSE) > 0;
+    public boolean hasBindingCurse(ItemStack stack) {
+        return stack.getEnchantmentLevel(Enchantments.BINDING_CURSE) == 1;
     }
 
     @Override
