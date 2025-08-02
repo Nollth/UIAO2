@@ -1,6 +1,7 @@
 package com.nothandnull.upgradableitemsandorestwo.event;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
+import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
 import com.nothandnull.upgradableitemsandorestwo.item.UnbreakableArmor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,52 +27,91 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = UpgradableItemsAndOresTwo.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ArmorEventHandler {
+    private static final String TAG_VERIFIED = "OwUVerified";
+    private static final String TAG_IS_MOB = "OwUMob";
+    private static final String TAG_IS_SEMI_MOB = "OwUSemiMob";
 
-    private static boolean isWearingAnyArmorPiece(LivingEntity entity) {
-        if (entity == null) return false;
-        for (ItemStack stack : entity.getArmorSlots()) {
-            if (!stack.isEmpty() && stack.getItem() instanceof UnbreakableArmor) {
-                return true;
+    private static void updateArmorState(LivingEntity entity) {
+        if (entity == null) return;
+
+        boolean isPlayer = entity instanceof Player;
+        boolean isArmorStand = entity instanceof ArmorStand;
+
+        entity.getPersistentData().remove(TAG_VERIFIED);
+        entity.getPersistentData().remove(TAG_IS_MOB);
+        entity.getPersistentData().remove(TAG_IS_SEMI_MOB);
+
+        ItemStack helmet = entity.getItemBySlot(EquipmentSlot.HEAD);
+        ItemStack chestplate = entity.getItemBySlot(EquipmentSlot.CHEST);
+        ItemStack leggings = entity.getItemBySlot(EquipmentSlot.LEGS);
+        ItemStack boots = entity.getItemBySlot(EquipmentSlot.FEET);
+
+        boolean hasCorrectHelmet = !helmet.isEmpty() &&
+                helmet.getItem().equals(ModItems.OWU_HELMET.get()) &&
+                helmet.getItem() instanceof UnbreakableArmor;
+
+        boolean hasCorrectChestplate = !chestplate.isEmpty() &&
+                chestplate.getItem().equals(ModItems.OWU_CHESTPLATE.get()) &&
+                chestplate.getItem() instanceof UnbreakableArmor;
+
+        boolean hasCorrectLeggings = !leggings.isEmpty() &&
+                leggings.getItem().equals(ModItems.OWU_LEGGINGS.get()) &&
+                leggings.getItem() instanceof UnbreakableArmor;
+
+        boolean hasCorrectBoots = !boots.isEmpty() &&
+                boots.getItem().equals(ModItems.OWU_BOOTS.get()) &&
+                boots.getItem() instanceof UnbreakableArmor;
+
+        boolean hasFullSet = hasCorrectHelmet && hasCorrectChestplate &&
+                hasCorrectLeggings && hasCorrectBoots;
+
+        if (hasFullSet) {
+            if (isPlayer) {
+                entity.getPersistentData().putBoolean(TAG_VERIFIED, true);
+            } else if (!isArmorStand) {
+                entity.getPersistentData().putBoolean(TAG_IS_MOB, true);
             }
+        } else if (!isPlayer && !isArmorStand && (hasCorrectHelmet || hasCorrectChestplate ||
+                hasCorrectLeggings || hasCorrectBoots)) {
+            entity.getPersistentData().putBoolean(TAG_IS_SEMI_MOB, true);
         }
-        return false;
     }
 
-    private static boolean isWearingFullSet(Player player) {
-        if (player == null) return false;
-        int equippedPieces = 0;
-        for (ItemStack stack : player.getArmorSlots()) {
-            if (stack.isEmpty()) return false;
-            if (!(stack.getItem() instanceof UnbreakableArmor)) return false;
-            equippedPieces++;
-        }
-        return equippedPieces == 4;
+    private static boolean isVerified(LivingEntity entity) {
+        return entity != null && entity.getPersistentData().getBoolean(TAG_VERIFIED);
     }
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onFall(LivingFallEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
-            event.setCanceled(true);
-        }
+    private static boolean isMob(LivingEntity entity) {
+        return entity != null && entity.getPersistentData().getBoolean(TAG_IS_MOB);
+    }
+
+    private static boolean isSemiMob(LivingEntity entity) {
+        return entity != null && entity.getPersistentData().getBoolean(TAG_IS_SEMI_MOB);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onSuffocation(LivingEvent.LivingTickEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
-            event.setCanceled(true);
-        }
-    }
+    public static void onLivingTick(LivingEvent.LivingTickEvent event) {
+        LivingEntity entity = event.getEntity();
+        updateArmorState(entity);
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onPotionAdded(MobEffectEvent.Added event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
-            MobEffect effect = event.getEffectInstance().getEffect();
-            if (effect.getCategory() == MobEffectCategory.HARMFUL) {
-                event.setCanceled(true);
+        if (isMob(entity) || isSemiMob(entity)) {
+            if (!entity.level().isClientSide) {
+                String entityName = entity.getName().getString();
+                Component message = Component.literal("(OwU) - ")
+                        .append(entityName)
+                        .append(" Has Been Obliterated.")
+                        .withStyle(ChatFormatting.DARK_RED);
+
+                entity.level().players().forEach(player ->
+                        player.sendSystemMessage(message));
             }
+
+            for (EquipmentSlot slot : EquipmentSlot.values()) {
+                if (slot.getType() == EquipmentSlot.Type.ARMOR) {
+                    entity.setItemSlot(slot, ItemStack.EMPTY);
+                }
+            }
+            entity.kill();
         }
     }
 
@@ -80,62 +120,81 @@ public class ArmorEventHandler {
         if (event.phase != TickEvent.Phase.END) return;
 
         Player player = event.player;
+        updateArmorState(player);
 
-        boolean wasAllowFlying = player.getAbilities().mayfly;
-        boolean wasFlying = player.getAbilities().flying;
+        boolean wasAllow = player.getAbilities().mayfly;
+        boolean wasInv = player.isInvulnerable();
 
-        if (isWearingFullSet(player)) {
-            player.setInvulnerable(true);
-            player.clearFire();
-            player.setRemainingFireTicks(0);
-            player.setAirSupply(player.getMaxAirSupply());
-            player.setHealth(player.getMaxHealth());
-            player.removeAllEffects();
-            player.getAbilities().mayfly = true;
-            player.getFoodData().setFoodLevel(20);
-            player.getFoodData().setSaturation(20f);
-            if (wasFlying) {
-                player.getAbilities().flying = true;
-            }
-        } else {
-            if (!player.isCreative() && !player.isSpectator() && !wasAllowFlying && !isWearingFullSet(player)) {
+
+        if (!isVerified(player)) {
+            if (!player.isCreative() && !player.isSpectator() && !wasAllow && !wasInv) {
                 player.getAbilities().mayfly = false;
                 player.getAbilities().flying = false;
+                player.setInvulnerable(false);
+                player.onUpdateAbilities();
             }
+            return;
         }
 
-        if (wasAllowFlying != player.getAbilities().mayfly ||
-                wasFlying != player.getAbilities().flying) {
-            player.onUpdateAbilities();
+        player.setInvulnerable(true);
+        player.clearFire();
+        player.setRemainingFireTicks(0);
+        player.setAirSupply(player.getMaxAirSupply());
+        player.setHealth(player.getMaxHealth());
+        player.removeAllEffects();
+        player.getAbilities().mayfly = true;
+        player.getFoodData().setFoodLevel(20);
+        player.getFoodData().setSaturation(20f);
+        player.onUpdateAbilities();
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onLivingHurt(LivingHurtEvent event) {
+        if (isVerified(event.getEntity())) {
+            event.setCanceled(true);
         }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onLivingEquipmentChange(LivingEquipmentChangeEvent event) {
-        if (event.getEntity() instanceof Player || event.getEntity() instanceof ArmorStand) {
-            return;
+    public static void onFall(LivingFallEvent event) {
+        if (isVerified(event.getEntity())) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onPotionAdded(MobEffectEvent.Added event) {
+        if (isVerified(event.getEntity())) {
+                MobEffect effect = event.getEffectInstance().getEffect();
+                if (effect.getCategory() == MobEffectCategory.HARMFUL) {
+                    event.setCanceled(true);
+                }
+            }
         }
 
-        if (event.getTo().getItem() instanceof UnbreakableArmor) {
-            event.setCanceled(true);
-            String entityName = event.getEntity().getName().getString();
-            if (!event.getEntity().level().isClientSide) {
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onLivingEquipmentChange(LivingEquipmentChangeEvent event) {
+        LivingEntity entity = event.getEntity();
+        updateArmorState(entity);
+
+        if (isMob(entity) || isSemiMob(entity)) {
+            if (!entity.level().isClientSide) {
+                String entityName = entity.getName().getString();
                 Component message = Component.literal("(OwU) - ")
                         .append(entityName)
                         .append(" Has Been Obliterated.")
                         .withStyle(ChatFormatting.DARK_RED);
 
-                for (Player player : event.getEntity().level().players()) {
-                    player.sendSystemMessage(message);
-                }
+                entity.level().players().forEach(player ->
+                        player.sendSystemMessage(message));
             }
 
-            event.getEntity().kill();
             for (EquipmentSlot slot : EquipmentSlot.values()) {
                 if (slot.getType() == EquipmentSlot.Type.ARMOR) {
-                    event.getEntity().setItemSlot(slot, ItemStack.EMPTY);
+                    entity.setItemSlot(slot, ItemStack.EMPTY);
                 }
             }
+            entity.kill();
         }
     }
 
@@ -166,74 +225,34 @@ public class ArmorEventHandler {
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onLivingTick(LivingEvent.LivingTickEvent event) {
-        if (event.getEntity() instanceof Player || event.getEntity() instanceof ArmorStand) {
-            return;
-        }
-
-        if (isWearingAnyArmorPiece(event.getEntity())) {
+    public static void onMobTarget(LivingChangeTargetEvent event) {
+        if (isVerified(event.getEntity())) {
             event.setCanceled(true);
-            String entityName = event.getEntity().getName().getString();
-
-            if (!event.getEntity().level().isClientSide) {
-                Component message = Component.literal("(OwU) - ")
-                        .append(entityName)
-                        .append(" Has Been Obliterated.")
-                        .withStyle(ChatFormatting.DARK_RED);
-
-                for (Player player : event.getEntity().level().players()) {
-                    player.sendSystemMessage(message);
-                }
-            }
-
-            event.getEntity().kill();
-            for (EquipmentSlot slot : EquipmentSlot.values()) {
-                if (slot.getType() == EquipmentSlot.Type.ARMOR) {
-                    event.getEntity().setItemSlot(slot, ItemStack.EMPTY);
-                }
-            }
         }
     }
-
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onMobTarget(LivingChangeTargetEvent event) {
-            if (event.getNewTarget() instanceof Player player && isWearingFullSet(player)) {
-            event.setCanceled(true);
-            }
-        }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getTarget() instanceof Player player && isWearingFullSet(player)) {
-            event.setCanceled(true);
-        }
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onLivingHurt(LivingHurtEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
+        if (isVerified(event.getEntity())) {
             event.setCanceled(true);
         }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onLivingDeath(LivingDeathEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
+        if (isVerified(event.getEntity())) {
             event.setCanceled(true);
         }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onProjectileImpact(ProjectileImpactEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
-            if (event.getRayTraceResult() instanceof EntityHitResult entityHit) {
-            if (entityHit.getEntity() instanceof Player) {
-                event.setCanceled(true);
-                event.getProjectile().discard();
+        if (event.getRayTraceResult() instanceof EntityHitResult entityHit) {
+            if (entityHit.getEntity() instanceof Player player) {
+                updateArmorState(player);
+                if (isVerified(player)) {
+                    event.setCanceled(true);
+                    event.getProjectile().discard();
                 }
             }
         }
@@ -241,24 +260,14 @@ public class ArmorEventHandler {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onAnyDamage(LivingDamageEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
-            event.setCanceled(true);
-        }
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onLivingDamage(LivingDamageEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
+        if (isVerified(event.getEntity())) {
             event.setCanceled(true);
         }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onLivingAttack(LivingAttackEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-        if (event.getEntity() instanceof Player player && isWearingFullSet(player)) {
+        if (isVerified(event.getEntity())) {
             event.setCanceled(true);
         }
     }

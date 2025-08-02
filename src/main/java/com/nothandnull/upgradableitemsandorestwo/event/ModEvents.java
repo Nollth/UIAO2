@@ -2,6 +2,7 @@ package com.nothandnull.upgradableitemsandorestwo.event;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
+import com.nothandnull.upgradableitemsandorestwo.item.UnbreakableArmor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -9,6 +10,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraft.world.entity.player.Player;
@@ -27,6 +29,28 @@ public class ModEvents {
     private static final Map<UUID, Long> playerBlockInteractionTime = new HashMap<>();
     private static final long AGGRO_DURATION = 20 * 15;
     private static final int DETECTION_RANGE = 8;
+
+    private static boolean isWearingFullSet2(Player player) {
+
+        int equippedPieces = 0;
+        for (ItemStack stack : player.getArmorSlots()) {
+            if (stack.isEmpty()) return false;
+            if (!(stack.getItem() instanceof UnbreakableArmor)) return false;
+            equippedPieces++;
+        }
+        return equippedPieces == 4;
+    }
+
+    private static boolean isWearingOneOrMore2(Player player) {
+
+        int equippedPiece = 0;
+        for (ItemStack stack : player.getArmorSlots()) {
+            if (stack.isEmpty()) return false;
+            if (!(stack.getItem() instanceof UnbreakableArmor)) return false;
+            equippedPiece++;
+        }
+        return equippedPiece >= 1 && equippedPiece <= 4;
+    }
 
     @SubscribeEvent
     public static void onEntitySpawn(EntityJoinLevelEvent event) {
@@ -62,26 +86,29 @@ public class ModEvents {
     }
 
     private static boolean shouldAttackPlayer(LivingEntity target) {
-        if (!(target instanceof Player player)) {
+
+        Player players = (Player) target;
+
+        if (!(target instanceof Player) || isWearingFullSet2(players) && isWearingOneOrMore2(players)) {
             return false;
         }
 
-        Long aggroTime = playerBlockInteractionTime.get(player.getUUID());
-        if (aggroTime != null && player.level().getGameTime() < aggroTime) {
+        Long aggroTime = playerBlockInteractionTime.get(players.getUUID());
+        if (aggroTime != null && players.level().getGameTime() < aggroTime) {
             return true;
         }
 
-        if (aggroTime != null && player.level().getGameTime() >= aggroTime) {
-            playerBlockInteractionTime.remove(player.getUUID());
+        if (aggroTime != null && players.level().getGameTime() >= aggroTime) {
+            playerBlockInteractionTime.remove(players.getUUID());
         }
 
-        for (ItemStack armorPiece : player.getArmorSlots()) {
+        for (ItemStack armorPiece : players.getArmorSlots()) {
             if (!armorPiece.isEmpty()) {
                 return true;
             }
         }
 
-        return !player.getMainHandItem().isEmpty() || !player.getOffhandItem().isEmpty();
+        return !players.getMainHandItem().isEmpty() || !players.getOffhandItem().isEmpty();
     }
 
     public static void cleanupOldEntries() {

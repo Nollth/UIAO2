@@ -19,17 +19,6 @@ public class UnbreakableArmor extends ArmorItem {
         super(pMaterial, pType, pProperties);
     }
 
-    private static boolean isWearingFullSet(Player player) {
-        if (player == null) return false;
-        int equippedPieces = 0;
-        for (ItemStack stack : player.getArmorSlots()) {
-            if (stack.isEmpty()) return false;
-            if (!(stack.getItem() instanceof UnbreakableArmor)) return false;
-            equippedPieces++;
-        }
-        return equippedPieces == 4;
-    }
-
     private boolean isAlternativeMode(ItemStack stack) {
         if (stack.hasTag()) {
             CompoundTag tag = stack.getTag();
