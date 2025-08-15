@@ -5,40 +5,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    UNBREAKABLE("unbreakable", Integer.MAX_VALUE,
-            new int[]{ Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE },
-            Integer.MAX_VALUE,
-            SoundEvents.ARMOR_EQUIP_NETHERITE,
-            Float.POSITIVE_INFINITY,
-            Float.POSITIVE_INFINITY,
-            () -> Ingredient.of(Items.BEDROCK.getDefaultInstance())) {
-
-        @Override
-        public int getDurabilityForType(ArmorItem.Type type) {
-            return Integer.MAX_VALUE;
-        }
-
-        @Override
-        public float getToughness() {
-            return Float.POSITIVE_INFINITY;
-        }
-
-        @Override
-        public float getKnockbackResistance() {
-            return Float.POSITIVE_INFINITY;
-        }
-
-        @Override
-        public int getDefenseForType(ArmorItem.Type type) {
-            return Integer.MAX_VALUE;
-        }
-    },
 
     REINFORCED_IRON("reinforced_iron", 30, new int[]{ 4, 12, 10, 4 },
             18, SoundEvents.ARMOR_EQUIP_IRON, 1f, 0.1f,
