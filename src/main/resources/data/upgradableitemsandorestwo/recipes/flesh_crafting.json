@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@#@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "#": {
+      "item": "upgradableitemsandorestwo:warm_milk_bucket"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:flesh",
+    "count": 8
+  }
+}

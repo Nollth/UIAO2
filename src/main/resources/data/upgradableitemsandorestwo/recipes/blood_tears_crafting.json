@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " @ ",
+    "@@@",
+    "#@$"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:charcoal"
+    },
+    "#": {
+      "item": "minecraft:water_bucket"
+    },
+    "$": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:blood_tears",
+    "count": 3
+  }
+}
