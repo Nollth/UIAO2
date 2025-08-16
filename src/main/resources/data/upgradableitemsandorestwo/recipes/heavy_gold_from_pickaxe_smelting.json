@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_golden_pickaxe",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_gold_ingot",
+    "count": 3
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

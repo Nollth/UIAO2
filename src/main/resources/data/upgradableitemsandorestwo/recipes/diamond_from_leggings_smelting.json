@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:diamond_leggings",
+    "nbt": {}
+  },
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 7
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

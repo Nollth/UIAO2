@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:iron_boots",
+    "nbt": {}
+  },
+  "result": {
+    "item": "minecraft:iron_ingot",
+    "count": 4
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

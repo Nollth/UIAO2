@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:nethoriden_hoe",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:nethoriden_ingot",
+    "count": 2
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

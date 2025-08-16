@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1,
+  "group": "flesh",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:flesh"
+  },
+  "result": "upgradableitemsandorestwo:fried_flesh"
+}

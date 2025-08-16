@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond_chestplate",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:reinforced_diamond",
+    "count": 8
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

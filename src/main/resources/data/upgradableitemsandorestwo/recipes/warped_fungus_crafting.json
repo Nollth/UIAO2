@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:stripped_warped_stem"
+    },
+    "#": {
+      "item": "minecraft:warped_wart_block"
+    }
+  },
+  "result": {
+    "item": "minecraft:warped_fungus",
+    "count": 3
+  }
+}

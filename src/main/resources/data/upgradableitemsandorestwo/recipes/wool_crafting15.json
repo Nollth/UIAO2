@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@ ",
+    "@@#",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:string"
+    },
+    "#": {
+      "item": "minecraft:purple_dye"
+    }
+  },
+  "result": {
+    "item": "minecraft:purple_wool"
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_BLOOD_TOOL = tag("needs_blood_tool");
         public static final TagKey<Block> NEEDS_REINFORCED_IRON_TOOL = tag("needs_reinforced_iron_tool");
         public static final TagKey<Block> NEEDS_REINFORCED_GOLD_TOOL = tag("needs_reinforced_gold_tool");
         public static final TagKey<Block> NEEDS_REINFORCED_DIAMOND_TOOL = tag("needs_reinforced_diamond_tool");

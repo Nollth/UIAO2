@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " # ",
+    " @ ",
+    " $ "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "#": {
+      "item": "minecraft:cobweb"
+    },
+    "$": {
+      "item": "minecraft:rotten_flesh"
+    }
+  },
+  "result": {
+    "item": "minecraft:spider_eye",
+    "count": 3
+  }
+}

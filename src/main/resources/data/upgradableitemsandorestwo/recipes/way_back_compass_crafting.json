@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@#@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "#": {
+      "item": "minecraft:compass"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:way_back_compass"
+  }
+}

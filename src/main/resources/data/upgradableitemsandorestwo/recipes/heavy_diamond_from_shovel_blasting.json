@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_diamond_shovel",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_diamond"
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

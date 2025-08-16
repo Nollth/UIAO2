@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@#@",
+    " # "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:blood_tears"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:blood_smasher"
+  }
+}

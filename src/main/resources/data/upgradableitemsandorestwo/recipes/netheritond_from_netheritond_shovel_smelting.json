@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:netheritond_shovel",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:netheritond_ingot"
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

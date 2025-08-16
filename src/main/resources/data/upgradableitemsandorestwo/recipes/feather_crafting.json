@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " # ",
+    "!@!",
+    " $ "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "#": {
+      "item": "minecraft:wheat_seed"
+    },
+    "$": {
+      "item": "minecraft:white_carpet"
+    },
+    "!": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "minecraft:feather",
+    "count": 8
+  }
+}

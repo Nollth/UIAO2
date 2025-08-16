@@ -1,12 +1,19 @@
 {
+  "item.upgradableitemsandorestwo.blood_tears": "Blood Tears",
+  "item.upgradableitemsandorestwo.blood_dagger": "Blood'agger",
+  "item.upgradableitemsandorestwo.blood_smasher": "Blood Smasher",
+
+  "item.upgradableitemsandorestwo.way_back_compass": "Way Back Compass",
   "item.upgradableitemsandorestwo.test_item": "Test Item :3",
   "item.upgradableitemsandorestwo.test_item_two": "Test Item Two :3",
 
   "item.upgradableitemsandorestwo.test_food": "Test Food :3",
   "item.upgradableitemsandorestwo.reinforced_golden_carrot": "Reinforced Golden Carrot",
   "item.upgradableitemsandorestwo.reinforced_golden_apple": "Reinforced Golden Apple",
+  "item.upgradableitemsandorestwo.reinforced_enchanted_golden_apple": "Reinforced Enchanted Golden Apple",
   "item.upgradableitemsandorestwo.heavy_golden_carrot": "Heavy Golden Carrot",
   "item.upgradableitemsandorestwo.heavy_golden_apple": "Heavy Golden Apple",
+  "item.upgradableitemsandorestwo.heavy_enchanted_golden_apple": "Heavy Enchanted Golden Apple",
 
 
   "item.upgradableitemsandorestwo.test_fuel": "Test Fuel :3",
@@ -24,6 +31,8 @@
   "item.upgradableitemsandorestwo.reinforced_netherite_coin": "Reinforced Netherite Coin",
   "item.upgradableitemsandorestwo.heavy_netherite_coin": "Heavy Netherite Coin",
 
+  "block.upgradableitemsandorestwo.unstable_obsidian": "Unstable Obsidian",
+  "block.upgradableitemsandorestwo.maghemite": "Maghemite",
   "block.upgradableitemsandorestwo.test_block": "Test Block :3",
   "block.upgradableitemsandorestwo.test_block_two": "Test Block Two :3",
 
@@ -356,6 +365,7 @@
   "item.minecraft.splash_potion.effect.kittys_love_v": "Splash Kitty's Love V",
   "item.minecraft.lingering_potion.effect.kittys_love_v": "Lingering Kitty's Love V",
   "item.upgradableitemsandorestwo.flesh": "Flesh",
+  "item.upgradableitemsandorestwo.fried_flesh": "Fried Flesh",
   "item.upgradableitemsandorestwo.warm_milk_bucket": "Warm Milk Bucket",
   "item.upgradableitemsandorestwo.kittys_love": "Kitty's Love",
   "effect.upgradableitemsandorestwo.kittys_love": "Kitty's Love",
@@ -375,5 +385,7 @@
   "creativetab.uiaotwo_blocks": "UIaO 2 - Blocks Tab",
   "creativetab.uiaotwo_items": "UIaO 2 - Items Tab",
   "creativetab.uiaotwo_foods": "UIaO 2 - Foods Tab",
-  "creativetab.uiaotwo_fuels": "UIaO 2 - Fuels Tab"
+  "creativetab.uiaotwo_fuels": "UIaO 2 - Fuels Tab",
+
+  "entity.minecraft.villager.upgradableitemsandorestwo.coinpolisher": "Coin Polisher"
 }

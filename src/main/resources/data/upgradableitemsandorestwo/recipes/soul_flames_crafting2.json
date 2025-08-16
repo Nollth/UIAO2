@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " @ ",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:burning_hope"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:soul_flames",
+    "count": 3
+  }
+}

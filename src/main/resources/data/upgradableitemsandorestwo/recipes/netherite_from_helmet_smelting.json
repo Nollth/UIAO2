@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:netherite_helmet",
+    "nbt": {}
+  },
+  "result": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

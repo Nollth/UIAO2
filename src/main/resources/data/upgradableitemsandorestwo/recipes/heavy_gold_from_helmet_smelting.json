@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_golden_helmet",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_gold_ingot",
+    "count": 5
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

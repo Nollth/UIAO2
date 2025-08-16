@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@ @",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:goaldmond"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:goaldmond_helmet"
+  }
+}

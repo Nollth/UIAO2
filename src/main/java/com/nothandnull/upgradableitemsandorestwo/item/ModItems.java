@@ -17,6 +17,18 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, UpgradableItemsAndOresTwo.MOD_ID);
 
+    public static final RegistryObject<Item> BLOOD_TEARS = ITEMS.register("blood_tears",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BLOOD_SMASHER = ITEMS.register("blood_smasher",
+            () -> new SelfDestroyItem(ModToolTiers.BLOOD, -2, -3.9f, new Item.Properties()));
+
+    public static final RegistryObject<Item> BLOOD_DAGGER = ITEMS.register("blood_dagger",
+            () -> new SelfSacrificeItem(ModToolTiers.BLOOD, -2, -3.9f, new Item.Properties()));
+
+    public static final RegistryObject<Item> WAY_BACK_COMPASS = ITEMS.register("way_back_compass",
+            () -> new WayBackCompass(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item",
             () -> new Item(new Item.Properties()));
 
@@ -198,25 +210,30 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> DEATH_STAR = ITEMS.register("death_star",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()){
+                @Override
+                public boolean isFoil(ItemStack stack) {
+                    return true;
+                }
+            });
 
     public static final RegistryObject<Item> DIAMOND_DROP = ITEMS.register("diamond_drop",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_AXE = ITEMS.register("diamron_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.DIAMRON, 12, -2.1F, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_BOOTS = ITEMS.register("diamron_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.DIAMRON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_CHESTPLATE = ITEMS.register("diamron_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.DIAMRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_HELMET = ITEMS.register("diamron_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.DIAMRON, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_HOE = ITEMS.register("diamron_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.DIAMRON, -4, 3.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_HORSE_ARMOR = ITEMS.register("diamron_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -225,19 +242,22 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_LEGGINGS = ITEMS.register("diamron_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.DIAMRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_PICKAXE = ITEMS.register("diamron_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.DIAMRON, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_SHOVEL = ITEMS.register("diamron_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.DIAMRON, 4, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMRON_SWORD = ITEMS.register("diamron_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.DIAMRON, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> FLESH = ITEMS.register("flesh",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoods.FLESH)));
+
+    public static final RegistryObject<Item> FRIED_FLESH = ITEMS.register("fried_flesh",
+            () -> new Item(new Item.Properties().food(ModFoods.FRIED_FLESH)));
 
     public static final RegistryObject<Item> FLUFFY_CANDY = ITEMS.register("fluffy_candy",
             () -> new Item(new Item.Properties()));
@@ -249,46 +269,46 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_AXE = ITEMS.register("goaldmond_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.GOALDMOND, 12, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_BOOTS = ITEMS.register("goaldmond_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOALDMOND, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_CHESTPLATE = ITEMS.register("goaldmond_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOALDMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_HELMET = ITEMS.register("goaldmond_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOALDMOND, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_HOE = ITEMS.register("goaldmond_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.GOALDMOND, -2, 1.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_HORSE_ARMOR = ITEMS.register("goaldmond_horse_armor",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_LEGGINGS = ITEMS.register("goaldmond_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOALDMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_PICKAXE = ITEMS.register("goaldmond_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.GOALDMOND, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_SHOVEL = ITEMS.register("goaldmond_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.GOALDMOND, 4, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOALDMOND_SWORD = ITEMS.register("goaldmond_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.GOALDMOND, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_BOOTS = ITEMS.register("golreon_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOLREON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_CHESTPLATE = ITEMS.register("golreon_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOLREON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_HELMET = ITEMS.register("golreon_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOLREON, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_HOE = ITEMS.register("golreon_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.GOLREON, -1, 0.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_HORSE_ARMOR = ITEMS.register("golreon_horse_armor",
             () -> new Item(new Item.Properties()));
@@ -297,19 +317,19 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_LEGGINGS = ITEMS.register("golreon_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.GOLREON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_PICKAXE = ITEMS.register("golreon_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.GOLREON, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_SHOVEL = ITEMS.register("golreon_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.GOLREON, 4, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_SWORD = ITEMS.register("golreon_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.GOLREON, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> GOLREON_AXE = ITEMS.register("golreon_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.GOLREON, 13, -2.1F, new Item.Properties()));
 
     public static final RegistryObject<Item> GRISTLES = ITEMS.register("gristles",
             () -> new Item(new Item.Properties()));
@@ -357,7 +377,15 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_APPLE = ITEMS.register("heavy_golden_apple",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoods.HEAVY_GOLDEN_APPLE)));
+
+    public static final RegistryObject<Item> HEAVY_ENCHANTED_GOLDEN_APPLE = ITEMS.register("heavy_enchanted_golden_apple",
+            () -> new Item(new Item.Properties().food(ModFoods.HEAVY_ENCHANTED_GOLDEN_APPLE)){
+                @Override
+                public boolean isFoil(ItemStack stack) {
+                    return true;
+                }
+            });
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_AXE = ITEMS.register("heavy_golden_axe",
             () -> new AxeItem(ModToolTiers.HEAVY_GOLD, 27, 0.0F, new Item.Properties()));
@@ -366,7 +394,7 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.HEAVY_GOLD, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_CARROT = ITEMS.register("heavy_golden_carrot",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoods.HEAVY_GOLDEN_CARROT)));
 
     public static final RegistryObject<Item> HEAVY_GOLDEN_CHESTPLATE = ITEMS.register("heavy_golden_chestplate",
             () -> new ArmorItem(ModArmorMaterials.HEAVY_GOLD, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
@@ -582,94 +610,94 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_AXE =  ITEMS.register("nethoriden_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.NETHORIDEN, 12, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_BOOTS =  ITEMS.register("nethoriden_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHORIDEN, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_CHESTPLATE =  ITEMS.register("nethoriden_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHORIDEN, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_HELMET =  ITEMS.register("nethoriden_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHORIDEN, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_HOE =  ITEMS.register("nethoriden_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.NETHORIDEN, -3, 1.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_INGOT =  ITEMS.register("nethoriden_ingot",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_LEGGINGS =  ITEMS.register("nethoriden_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHORIDEN, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_PICKAXE =  ITEMS.register("nethoriden_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.NETHORIDEN, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_SHOVEL =  ITEMS.register("nethoriden_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.NETHORIDEN, 4, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHORIDEN_SWORD =  ITEMS.register("nethoriden_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.NETHORIDEN, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_AXE =  ITEMS.register("netheritond_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.NETHERITOND, 11, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_BOOTS =  ITEMS.register("netheritond_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHERITOND, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_CHESTPLATE =  ITEMS.register("netheritond_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHERITOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_HELMET =  ITEMS.register("netheritond_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHERITOND, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_HOE =  ITEMS.register("netheritond_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.NETHERITOND, -6, 4.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_INGOT =  ITEMS.register("netheritond_ingot",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_LEGGINGS =  ITEMS.register("netheritond_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETHERITOND, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_PICKAXE =  ITEMS.register("netheritond_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.NETHERITOND, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_SHOVEL =  ITEMS.register("netheritond_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.NETHERITOND, 4, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITOND_SWORD =  ITEMS.register("netheritond_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.NETHERITOND, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_AXE =  ITEMS.register("netthrion_axe",
-            () -> new Item(new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.NETTHRION, 12, -2.1F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_BOOTS =  ITEMS.register("netthrion_boots",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETTHRION, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_CHESTPLATE =  ITEMS.register("netthrion_chestplate",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETTHRION, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_HELMET =  ITEMS.register("netthrion_helmet",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETTHRION, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_HOE =  ITEMS.register("netthrion_hoe",
-            () -> new Item(new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.NETTHRION, -5, 3.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_INGOT =  ITEMS.register("netthrion_ingot",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_LEGGINGS =  ITEMS.register("netthrion_leggings",
-            () -> new Item(new Item.Properties()));
+            () -> new ArmorItem(ModArmorMaterials.NETTHRION, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_PICKAXE =  ITEMS.register("netthrion_pickaxe",
-            () -> new Item(new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.NETTHRION, 3, -1.6F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_SHOVEL =  ITEMS.register("netthrion_shovel",
-            () -> new Item(new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.NETTHRION, 4, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NETTHRION_SWORD =  ITEMS.register("netthrion_sword",
-            () -> new Item(new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.NETTHRION, 7, -0.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> OXIDIZED_COPPER_AXE =  ITEMS.register("oxidized_copper_axe",
             () -> new Item(new Item.Properties()));
@@ -822,7 +850,15 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_APPLE =  ITEMS.register("reinforced_golden_apple",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoods.REINFORCED_GOLDEN_APPLE)));
+
+    public static final RegistryObject<Item> REINFORCED_ENCHANTED_GOLDEN_APPLE =  ITEMS.register("reinforced_enchanted_golden_apple",
+            () -> new Item(new Item.Properties().food(ModFoods.REINFORCED_ENCHANTED_GOLDEN_APPLE)){
+                @Override
+                public boolean isFoil(ItemStack stack) {
+                    return true;
+                }
+            });
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_AXE =  ITEMS.register("reinforced_golden_axe",
             () -> new AxeItem(ModToolTiers.REINFORCED_GOLD, 13, -2, new Item.Properties()));
@@ -831,7 +867,7 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.REINFORCED_GOLD, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_CARROT =  ITEMS.register("reinforced_golden_carrot",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoods.REINFORCED_GOLDEN_CARROT)));
 
     public static final RegistryObject<Item> REINFORCED_GOLDEN_CHESTPLATE =  ITEMS.register("reinforced_golden_chestplate",
             () -> new ArmorItem(ModArmorMaterials.REINFORCED_GOLD, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
@@ -963,7 +999,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> WARM_MILK_BUCKET =  ITEMS.register("warm_milk_bucket",
-            () -> new Item(new Item.Properties()));
+            () -> new WarmMilkBucketItem(new Item.Properties().food(ModFoods.WARM_MILK_BUCKET)));
 
     public static final RegistryObject<Item> WARM_WATER_BUCKET =  ITEMS.register("warm_water_bucket",
             () -> new Item(new Item.Properties()));

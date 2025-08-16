@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:diamron_chestplate",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:diamron_ingot",
+    "count": 8
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

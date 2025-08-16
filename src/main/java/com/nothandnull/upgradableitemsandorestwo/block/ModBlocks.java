@@ -14,9 +14,15 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class    ModBlocks {
+public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, UpgradableItemsAndOresTwo.MOD_ID);
+
+    public static final RegistryObject<Block> UNSTABLE_OBSIDIAN = registerBlock("unstable_obsidian",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN).requiresCorrectToolForDrops().strength(25.0F, 600.0F)));
+
+    public static final RegistryObject<Block> MAGHEMITE = registerBlock("maghemite",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LODESTONE).requiresCorrectToolForDrops().strength(3.5F)));
 
     public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
@@ -25,37 +31,37 @@ public class    ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 
     public static final RegistryObject<Block> DIAMRON_BLOCK = registerBlock("diamron_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
 
     public static final RegistryObject<Block> GOALDMOND_BLOCK = registerBlock("goaldmond_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
 
     public static final RegistryObject<Block> GOLREON_BLOCK = registerBlock("golreon_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
 
     public static final RegistryObject<Block> HEAVY_DIAMOND_BLOCK = registerBlock("heavy_diamond_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
 
     public static final RegistryObject<Block> HEAVY_GOLD_BLOCK = registerBlock("heavy_gold_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK).requiresCorrectToolForDrops().strength(3.0F, 6.0F)));
 
     public static final RegistryObject<Block> HEAVY_IRON_BLOCK = registerBlock("heavy_iron_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
 
     public static final RegistryObject<Block> HEAVY_NETHERITE_BLOCK = registerBlock("heavy_netherite_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     public static final RegistryObject<Block> KITTY_BLOCK = registerBlock("kitty_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN)));
 
     public static final RegistryObject<Block> NETHERITOND_BLOCK = registerBlock("netheritond_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     public static final RegistryObject<Block> NETHORIDEN_BLOCK = registerBlock("nethoriden_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     public static final RegistryObject<Block> NETTHRION_BLOCK = registerBlock("netthrion_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     public static final RegistryObject<Block> OXIDIZED_HEAVY_COPPER = registerBlock("oxidized_heavy_copper",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER)));

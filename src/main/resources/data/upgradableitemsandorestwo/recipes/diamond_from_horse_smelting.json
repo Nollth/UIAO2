@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:diamond_horse_armor",
+    "nbt": {}
+  },
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 9
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

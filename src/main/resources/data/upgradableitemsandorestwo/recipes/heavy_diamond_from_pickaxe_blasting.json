@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:heavy_diamond_pickaxe",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:heavy_diamond",
+    "count": 3
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "upgradableitemsandorestwo:liathrond_chestplate",
+    "nbt": {}
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:liathrond",
+    "count": 8
+  },
+  "experience": 66.0,
+  "cookingtime": 200
+}

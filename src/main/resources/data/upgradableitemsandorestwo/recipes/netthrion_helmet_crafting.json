@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@ @",
+    "   "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:netthrion_ingot"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:netthrion_helmet"
+  }
+}

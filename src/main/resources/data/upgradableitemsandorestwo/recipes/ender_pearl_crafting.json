@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " # ",
+    " @ ",
+    " $ "
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "#": {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "$": {
+      "item": "minecraft:warped_fungus"
+    }
+  },
+  "result": {
+    "item": "minecraft:ender_pearl",
+    "count": 8
+  }
+}
