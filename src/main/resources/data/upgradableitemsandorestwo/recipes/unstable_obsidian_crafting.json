@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " @ ",
+    "$#!",
+    " % "
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:netherite_coin"
+    },
+    "#": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "$": {
+      "item": "upgradableitemsandorestwo:diamond_coin"
+    },
+    "%": {
+      "item": "upgradableitemsandorestwo:gold_coin"
+    },
+    "!": {
+      "item": "upgradableitemsandorestwo:iron_coin"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:unstable_obsidian"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@@@",
+    "@#@",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:blue_ice"
+    },
+    "#": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:cold_water_bucket"
+  }
+}

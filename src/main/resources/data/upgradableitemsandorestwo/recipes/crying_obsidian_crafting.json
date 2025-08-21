@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "@%$",
+    "%#%",
+    "$%@"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:lava_bucket"
+    },
+    "#": {
+      "item": "minecraft:ender_eye"
+    },
+    "$": {
+      "item": "minecraft:water_bucket"
+    },
+    "%": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "minecraft:crying_obsidian",
+    "count": 8
+  }
+}

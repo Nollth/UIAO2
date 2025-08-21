@@ -1,9 +1,12 @@
 package com.nothandnull.upgradableitemsandorestwo.block;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
+import com.nothandnull.upgradableitemsandorestwo.item.InvulnerableBlockItem;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -87,8 +90,8 @@ public class ModBlocks {
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
+        ModItems.ITEMS.register(name, () -> new InvulnerableBlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

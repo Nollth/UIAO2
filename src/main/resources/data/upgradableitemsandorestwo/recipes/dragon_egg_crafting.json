@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "$#$",
+    "#@#",
+    "$#$"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:death_star"
+    },
+    "#": {
+      "item": "minecraft:end_crystal"
+    },
+    "$": {
+      "item": "minecraft:beacon"
+    }
+  },
+  "result": {
+    "item": "minecraft:dragon_egg"
+  }
+}

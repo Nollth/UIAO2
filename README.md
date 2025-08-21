@@ -1,2 +1,2 @@
 # UIAO2
-A Minecraft Java mod
+A Minecraft Java Mod.

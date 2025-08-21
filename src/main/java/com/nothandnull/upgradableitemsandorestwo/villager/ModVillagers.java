@@ -25,7 +25,7 @@ public class ModVillagers {
     public static final RegistryObject<VillagerProfession> COIN_POLISHER =
         VILLAGER_PROFESSIONS.register("coinpolisher", () -> new VillagerProfession("coinpolisher",
                 holder -> holder.get() == COIN_POI.get(), holder -> holder.get() == COIN_POI.get(),
-                ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_ARMORER));
+                ImmutableSet.of(), ImmutableSet.of(), SoundEvents.WANDERING_TRADER_AMBIENT));
 
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);

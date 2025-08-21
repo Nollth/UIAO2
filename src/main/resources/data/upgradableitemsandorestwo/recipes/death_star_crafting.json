@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#@$",
+    "@!@",
+    "#@$"
+  ],
+  "key": {
+    "@": {
+      "item": "upgradableitemsandorestwo:unstable_obsidian"
+    },
+    "!": {
+      "item": "minecraft:nether_star"
+    },
+    "#": {
+      "item": "upgradableitemsandorestwo:magma_bucket"
+    },
+    "$": {
+      "item": "upgradableitemsandorestwo:cold_water_bucket"
+    }
+  },
+  "result": {
+    "item": "upgradableitemsandorestwo:death_star"
+  }
+}

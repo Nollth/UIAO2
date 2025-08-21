@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " @ ",
+    "#!$",
+    "@@@"
+  ],
+  "key": {
+    "@": {
+      "item": "minecraft:charcoal"
+    },
+    "!": {
+      "item": "upgradableitemsandorestwo:blood_tears"
+    },
+    "#": {
+      "item": "minecraft:water_bucket"
+    },
+    "$": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "minecraft:ghast_tear",
+    "count": 3
+  }
+}
