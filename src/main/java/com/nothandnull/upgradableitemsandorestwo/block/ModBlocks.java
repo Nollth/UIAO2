@@ -1,12 +1,10 @@
 package com.nothandnull.upgradableitemsandorestwo.block;
 
 import com.nothandnull.upgradableitemsandorestwo.UpgradableItemsAndOresTwo;
+import com.nothandnull.upgradableitemsandorestwo.block.custom.CountingTableBlock;
 import com.nothandnull.upgradableitemsandorestwo.item.InvulnerableBlockItem;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,16 +20,16 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, UpgradableItemsAndOresTwo.MOD_ID);
 
     public static final RegistryObject<Block> UNSTABLE_OBSIDIAN = registerBlock("unstable_obsidian",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN).requiresCorrectToolForDrops().strength(25.0F, 600.0F)));
+            () -> new CountingTableBlock(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN).requiresCorrectToolForDrops().strength(25.0F, 600.0F)));
 
     public static final RegistryObject<Block> MAGHEMITE = registerBlock("maghemite",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LODESTONE).requiresCorrectToolForDrops().strength(3.5F)));
 
     public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noLootTable()));
 
     public static final RegistryObject<Block> TEST_BLOCK_TWO = registerBlock("test_block_two",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noLootTable()));
 
     public static final RegistryObject<Block> DIAMRON_BLOCK = registerBlock("diamron_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));
@@ -55,7 +53,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     public static final RegistryObject<Block> KITTY_BLOCK = registerBlock("kitty_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN).noLootTable()));
 
     public static final RegistryObject<Block> NETHERITOND_BLOCK = registerBlock("netheritond_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
@@ -67,10 +65,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
 
     public static final RegistryObject<Block> OXIDIZED_HEAVY_COPPER = registerBlock("oxidized_heavy_copper",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).noLootTable()));
 
     public static final RegistryObject<Block> OXIDIZED_REINFORCED_COPPER = registerBlock("oxidized_reinforced_copper",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER).noLootTable()));
 
     public static final RegistryObject<Block> REINFORCED_DIAMOND_BLOCK = registerBlock("reinforced_diamond_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).requiresCorrectToolForDrops().strength(5.0F, 6.0F)));

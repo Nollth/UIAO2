@@ -2,11 +2,16 @@ package com.nothandnull.upgradableitemsandorestwo;
 
 import com.mojang.logging.LogUtils;
 import com.nothandnull.upgradableitemsandorestwo.block.ModBlocks;
+import com.nothandnull.upgradableitemsandorestwo.block.entity.ModBlockEntities;
 import com.nothandnull.upgradableitemsandorestwo.event.WayBackCompassEvents;
 import com.nothandnull.upgradableitemsandorestwo.item.ModCreativeModTabs;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
 import com.nothandnull.upgradableitemsandorestwo.item.WayBackCompass;
+import com.nothandnull.upgradableitemsandorestwo.screen.CountingTableMenu;
+import com.nothandnull.upgradableitemsandorestwo.screen.CountingTableScreen;
+import com.nothandnull.upgradableitemsandorestwo.screen.ModMenuTypes;
 import com.nothandnull.upgradableitemsandorestwo.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +42,9 @@ public class UpgradableItemsAndOresTwo {
 
         ModVillagers.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -55,7 +63,7 @@ public class UpgradableItemsAndOresTwo {
     public void onServerStarting(ServerStartingEvent event) {
     }
 
-    @Mod.EventBusSubscriber(modid = UpgradableItemsAndOresTwo.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
@@ -71,6 +79,7 @@ public class UpgradableItemsAndOresTwo {
                                     tag.getFloat(WayBackCompass.TAG_ANGLE) : 0.0F;
                         });
             });
+            MenuScreens.register(ModMenuTypes.COUNTING_TABLE_MENU.get(), CountingTableScreen::new);
         }
     }
 }
