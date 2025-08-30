@@ -1,0 +1,21 @@
+{
+  "type": "upgradableitemsandorestwo:counting_table",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:totem_of_undying"
+    },
+    {
+      "item": "minecraft:emerald_block"
+    },
+    {
+      "item": "minecraft:netherite_hoe"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "upgradableitemsandorestwo:death_star"
+  }
+}

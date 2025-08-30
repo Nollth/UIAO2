@@ -20,7 +20,7 @@ public class CountingTableScreen extends AbstractContainerScreen<CountingTableMe
     @Override
     protected void init() {
         super.init();
-        this.inventoryLabelY = 60;
+        this.inventoryLabelY = 70;
         this.inventoryLabelX = 5;
         this.titleLabelY = 5;
         this.titleLabelX = 5;
@@ -35,14 +35,6 @@ public class CountingTableScreen extends AbstractContainerScreen<CountingTableMe
         int y = (height - imageHeight) / 2;
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
-
-        renderProgressArrow(guiGraphics, x, y);
-    }
-
-    private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y){
-        if(menu.isCrafting()){
-            guiGraphics.blit(TEXTURE, x + 1, y + 1, 176, 1, 1, menu.getScaledProgress());
-        }
     }
 
     @Override

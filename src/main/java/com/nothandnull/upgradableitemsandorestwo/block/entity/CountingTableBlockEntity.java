@@ -1,6 +1,7 @@
 package com.nothandnull.upgradableitemsandorestwo.block.entity;
 
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
+import com.nothandnull.upgradableitemsandorestwo.recipe.CountingTableRecipe;
 import com.nothandnull.upgradableitemsandorestwo.screen.CountingTableMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,6 +14,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -25,6 +27,8 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CountingTableBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(5);
@@ -39,7 +43,7 @@ public class CountingTableBlockEntity extends BlockEntity implements MenuProvide
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 0;
+    private int maxProgress = 1;
 
     public CountingTableBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.COUNTING_TABLE_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -49,7 +53,7 @@ public class CountingTableBlockEntity extends BlockEntity implements MenuProvide
                     return switch (pIndex) {
                         case 0 -> CountingTableBlockEntity.this.progress;
                         case 1 -> CountingTableBlockEntity.this.maxProgress;
-                        default -> 0;
+                        default -> 1;
                     };
                 }
 
@@ -112,36 +116,24 @@ public class CountingTableBlockEntity extends BlockEntity implements MenuProvide
     protected void saveAdditional(CompoundTag pTag) {
         super.saveAdditional(pTag);
         pTag.put("inventory", itemHandler.serializeNBT());
-        pTag.putInt("counting_table.progress", progress);
     }
 
     @Override
     public void load(CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
-        progress = pTag.getInt("counting_table.progress");
     }
 
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
         if(hasRecipe()) {
-            increaseCraftingProgress();
-            setChanged(pLevel, pPos, pState);
-
-            if(hasProgressFinished()) {
                 craftItem();
-                resetProgress();
             }
-        } else {
-            resetProgress();
         }
-    }
-
-    private boolean hasProgressFinished() {
-        return progress >= maxProgress;
-    }
 
     private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.DEATH_STAR.get(), 1);
+        Optional<CountingTableRecipe> recipe = getCurrentRecipe();
+        ItemStack result = recipe.get().getResultItem(null);
+
         this.itemHandler.extractItem(INPUT_SLOT1, 1, false);
         this.itemHandler.extractItem(INPUT_SLOT2, 1, false);
         this.itemHandler.extractItem(INPUT_SLOT3, 1, false);
@@ -151,26 +143,28 @@ public class CountingTableBlockEntity extends BlockEntity implements MenuProvide
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
 
-    private void resetProgress() {
-        progress = 0;
-    }
-
-    private void increaseCraftingProgress() {
-        progress++;
-    }
-
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT1).getItem() == Items.NETHER_STAR &&
-                this.itemHandler.getStackInSlot(INPUT_SLOT2).getItem() == Items.TOTEM_OF_UNDYING &&
-                this.itemHandler.getStackInSlot(INPUT_SLOT3).getItem() == Items.EMERALD_BLOCK &&
-                this.itemHandler.getStackInSlot(INPUT_SLOT4).getItem() == Items.NETHERITE_HOE;
-        ItemStack result = new ItemStack(ModItems.DEATH_STAR.get());
+        Optional<CountingTableRecipe> recipe = getCurrentRecipe();
 
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot();
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
+
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
     }
 
-    private boolean canInsertItemIntoOutputSlot() {
-        return false;
+    private Optional<CountingTableRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for(int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+
+        return this.level.getRecipeManager().getRecipeFor(CountingTableRecipe.Type.INSTANCE, inventory, level);
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item) {
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(item);
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {

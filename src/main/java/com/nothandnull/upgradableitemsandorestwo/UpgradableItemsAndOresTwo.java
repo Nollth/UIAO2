@@ -7,6 +7,7 @@ import com.nothandnull.upgradableitemsandorestwo.event.WayBackCompassEvents;
 import com.nothandnull.upgradableitemsandorestwo.item.ModCreativeModTabs;
 import com.nothandnull.upgradableitemsandorestwo.item.ModItems;
 import com.nothandnull.upgradableitemsandorestwo.item.WayBackCompass;
+import com.nothandnull.upgradableitemsandorestwo.recipe.ModRecipes;
 import com.nothandnull.upgradableitemsandorestwo.screen.CountingTableMenu;
 import com.nothandnull.upgradableitemsandorestwo.screen.CountingTableScreen;
 import com.nothandnull.upgradableitemsandorestwo.screen.ModMenuTypes;
@@ -26,6 +27,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import java.lang.module.ModuleReference;
+
 @Mod(UpgradableItemsAndOresTwo.MOD_ID)
 public class UpgradableItemsAndOresTwo {
     public static final String MOD_ID = "upgradableitemsandorestwo";
@@ -44,6 +47,7 @@ public class UpgradableItemsAndOresTwo {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);

@@ -37,24 +37,16 @@ public class CountingTableMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler, 1, 98, 17));
             this.addSlot(new SlotItemHandler(iItemHandler, 2, 62, 53));
             this.addSlot(new SlotItemHandler(iItemHandler, 3, 98, 53));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 80, 35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 4, 80, 35){
+                @Override
+                public boolean mayPlace(net.minecraft.world.item.ItemStack stack) {
+                    return false;
+                }
+            });
         });
 
         addDataSlots(data);
     }
-
-    public boolean isCrafting() {
-        return data.get(0) > 0;
-    }
-
-    public int getScaledProgress() {
-     int progress = this.data.get(0);
-     int maxProgress = this.data.get(1);
-     int progressArrowSize = 1;
-
-     return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-    }
-
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
